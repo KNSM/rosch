@@ -1,0 +1,128 @@
+.footer {
+  background: linear-gradient(90deg, #EBF4FE 50%, #FFFFFF 50%, #FFFFFF 100%);
+
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__item {
+    padding: 100px 0 120px;
+    display: flex;
+
+    &.footer-left {
+      width: 25%;
+      background: #EBF4FE;
+    }
+
+    &.footer-right {
+      width: 75%;
+      background: #fff;
+    }
+  }
+
+  &__nav {
+    width: 33.3333%;
+    display: flex;
+    justify-content: center;
+
+    .list {
+      margin-bottom: -6px;
+
+      .list__item {
+        margin-bottom: 12px;
+
+        &:first-child {
+          .list__item-link {
+            padding-top: 0;
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .list__item-link {
+        position: relative;
+        display: block;
+        padding: 6px 0;
+
+        &:before {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 1px;
+          background: $primaryColor;
+          bottom: 0;
+          left: 0;
+          transition: .2s;
+        }
+        &:hover {
+          color: $primaryColor;
+
+          &:before {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    &.nav-rating {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    &.nav-prepare {
+      justify-content: flex-end;
+    }
+
+    &.nav-rating, &.nav-prepare {
+      .list {
+        .list__item-link {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &__info {
+    width: 33.3333%;
+    display: flex;
+    flex-direction: column;
+
+    .info-links {
+      margin-bottom: 25px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .link {
+        margin-bottom: 16px;
+        display: block;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .info-media {
+      margin-bottom: 25px;
+      flex: 1 1 auto;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .info-copyright {
+      .copyright-text {
+        .text {
+          color: #8294A2;
+        }
+      }
+    }
+  }
+}

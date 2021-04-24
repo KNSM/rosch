@@ -1,0 +1,36 @@
+.link {
+
+  &.link-primary-border {
+    display: inline-flex;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    color: $primaryColor;
+    border: 1px $primaryColor solid;
+    border-radius: 6px;
+    min-height: 50px;
+
+    &:hover {
+      background: $primaryColor;
+      color: #fff;
+    }
+  }
+
+  &.link-primary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background: #3D96FB;
+    box-shadow: $primaryBoxShadow;
+    border-radius: 10px;
+  }
+  
+  &.link-text-primary {
+    color: $primaryColor;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -5,8 +5,15 @@ $bpMobile: 767px;
 $bpPhone: 480px;
 
 // set font
-$baseFont: "Roboto", "Arial", sans-serif;
+$baseFont: "Montserrat", "Arial", sans-serif;
 
 // set setting color
-$pageColor: #ffffff;
-$primaryColor: #7D90A5;
+$pageColor: #F5FAFF;
+$defaultColor: #22293C;
+$primaryColor: #3D95F5;
+$greenColor: #44CB5A;
+$grayColor: #7E8493;
+
+$greenGradient: linear-gradient(323.13deg, #27BE3F -8.84%, #44CB5A 110.2%);
+
+$primaryBoxShadow: 0px 15px 20px rgba(61, 150, 251, 0.2);
