@@ -15,6 +15,12 @@
       outline: none;
       padding: 0 50px;
       transition: .2s;
+      appearance: none;
+
+      &[type="search"]::-webkit-search-decoration,
+      &[type="search"]::-webkit-search-cancel-button,
+      &[type="search"]::-webkit-search-results-button,
+      &[type="search"]::-webkit-search-results-decoration { display: none; }
 
       &:hover, &:focus {
         box-shadow: 0 0 10px 0 rgba($primaryColor, .1);

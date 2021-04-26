@@ -1,5 +1,83 @@
 .list {
 
+  &.list-quiz {
+    .list__item {
+      margin-bottom: 7px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 15px;
+      background: #F5FAFF;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .text {
+        line-height: 1.4;
+        color: #22293C;
+        margin-right: 7px;
+      }
+
+      .icon {
+        font-size: 12px;
+
+        &:before {
+          font-family: 'icomoon';
+        }
+      }
+
+      &.item-true {
+        background: rgba(68, 203, 90, 0.1);
+
+        .text {
+          color: #44CB5A;
+        }
+
+        .icon {
+          &:before {
+            content: '\e904';
+            color: #44CB5A;
+          }
+        }
+      }
+
+      &.item-false {
+        background: rgba(255, 42, 62, 0.05);
+
+        .text {
+          color: #FF5464;
+        }
+
+        .icon {
+          color: #FF5464;
+          &:before {
+            content: '\e905';
+          }
+        }
+      }
+    }
+  }
+
+  &.list-rating-stars {
+    display: flex;
+
+    .list__item {
+      margin-right: 5px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .icon {
+        font-size: 14px;
+        color: $starYellowColor;
+      }
+    }
+  }
+
   &.list-media-icons {
     display: flex;
 

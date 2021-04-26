@@ -11,7 +11,6 @@ $(document).ready(function () {
     });
 
     //recommend special
-
     $(function () {
         var recommendWrapper = $('.recommend-special .recommend__wrapper');
 
@@ -66,4 +65,38 @@ $(document).ready(function () {
         }
     });
 
+    //quiz
+    $(function () {
+        var quiz = $('.list.list-quiz');
+
+        if (quiz != null) {
+            quiz.each(function () {
+                var items = $(this).find('.list__item'),
+                    itemTrue;
+
+                if (quiz.hasClass('quiz-sidebar')) {
+                    itemTrue = 2;
+                }
+
+                items.click(function () {
+
+                    if (!$(this).hasClass('-disabled')) {
+                        items.addClass('-disabled');
+
+                        if ($(this).data('item') === itemTrue) {
+                            $(this).addClass('item-true');
+                        } else {
+                            $(this).addClass('item-false');
+
+                            for (var i = 0; i < items.length; i++) {
+                                if ($(items[i]).data('item') === itemTrue) {
+                                    $(items[i]).addClass('item-true');
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        }
+    });
 });

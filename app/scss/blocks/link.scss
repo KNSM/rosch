@@ -30,7 +30,11 @@
     color: $primaryColor;
     
     &:hover {
-      text-decoration: underline;
+      color: $primaryColorHover;
+    }
+
+    &:active {
+      color: $primaryColorActive;
     }
   }
 }
