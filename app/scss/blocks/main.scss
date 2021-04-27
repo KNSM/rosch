@@ -1,8 +1,16 @@
 .main {
-  padding: 35px 0 130px;
+  padding: 10px 0 130px;
 
   &-wrapper {
     display: flex;
     margin: 0 -35px;
+  }
+
+  &-title {
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

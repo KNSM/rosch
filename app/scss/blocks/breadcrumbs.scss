@@ -1,0 +1,46 @@
+.breadcrumbs {
+  padding: 10px 0;
+
+  .list {
+    display: flex;
+
+    .list__item {
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      color: #7E8493;
+
+      .text {
+        font-weight: 500;
+        font-size: 13px;
+      }
+
+      &:after {
+        content: '\e914';
+        font-family: 'icomoon';
+        font-size: 8px;
+        margin-left: 10px;
+      }
+
+      .list__item-link {
+        color: $primaryColor;
+
+        &:hover {
+          color: $primaryColorHover;
+        }
+
+        &:active {
+          color: $primaryColorActive;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}

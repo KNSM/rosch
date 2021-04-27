@@ -149,347 +149,590 @@
 <!-- end header.html-->
     <main class="main">
         <div class="container">
+<!-- start breadcrumbs.html-->
+<div class="breadcrumbs">
+    <ul class="list">
+        <li class="list__item"><a href="#" class="list__item-link"><span class="text">Главная</span></a></li>
+        <li class="list__item"><span class="text">Подготовка к ЕГЭ</span></li>
+    </ul>
+</div>
+<!-- end breadcrumbs.html-->
+<!-- start main-title.html-->
+<div class="main-title">
+    <h1 class="h1">
+        Подбор школ по подготовке к ЕГЭ
+    </h1>
+</div>
+<!-- end main-title.html-->
             <div class="main-wrapper">
 <!-- start content.html-->
 <div class="content">
+<!-- start section-catalog.html-->
+<section class="section section-catalog" id="section-catalog">
+    <div class="catalog catalog-main">
+        <div class="catalog__form">
+            <form action="#" class="form form-catalog-main catalog-search-school">
+                <div class="form__item">
+                    <div class="input__field-wrapper">
+                        <div class="input__field -full">
+                            <input type="text" class="input input-text input-white" placeholder="Поиск по названию">
+                        </div>
+                    </div>
+                </div>
 
+                <div class="form__item">
+                    <div class="input__field-wrapper">
+                        <div class="input__field field-selector">
+                            <div class="selector">
+                                <select id="form-catalog-main-object" name="form-catalog-main-object" class="select">
+                                    <option value="start" selected="selected">Предметы</option>
+                                    <option value="1">МатематикаМатематикаМатематикаМатематикаМатематикаМатематика
+                                    </option>
+                                    <option value="2">Русский язык</option>
+                                    <option value="3">Обществознание</option>
+                                    <option value="4">Биология</option>
+                                    <option value="5">История</option>
+                                    <option value="6">Английский язык</option>
+                                    <option value="7">Химия</option>
+                                    <option value="8">Физика</option>
+                                    <option value="9">Литература</option>
+                                    <option value="10">Информатика</option>
+                                    <option value="11">География</option>
+                                    <option value="12">Немецкий язык</option>
+                                    <option value="13">Французский язык</option>
+                                    <option value="14">Астрономия</option>
+                                </select>
+                                <div class="selector-menu">
+                                    <div class="menu"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input__field field-selector">
+
+                            <div class="selector">
+                                <select id="form-catalog-main-type" name="form-catalog-main-type" class="select">
+                                    <option value="start" selected="selected">Тип обучения</option>
+                                    <option value="1">Индивидуально</option>
+                                    <option value="2">В группах</option>
+                                </select>
+                                <div class="selector-menu">
+                                    <div class="menu"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input__field field-selector">
+
+                            <div class="selector">
+                                <select id="form-catalog-main-format" name="form-catalog-main-format" class="select">
+                                    <option value="start" selected="selected">Формат</option>
+                                    <option value="1">Онлайн вебинар</option>
+                                    <option value="2">Видеоурок</option>
+                                </select>
+                                <div class="selector-menu">
+                                    <div class="menu"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form__item">
+                    <div class="input__field-wrapper">
+                        <div class="input__field field-checkbox">
+                            <div class="input__box box-checkbox-white">
+                                <input type="checkbox" class="input input-checkbox"
+                                       id="form-catalog-main-checkbox-test-lesson" name="form-catalog-main-checkbox">
+                                <label for="form-catalog-main-checkbox-test-lesson" class="label">Пробное
+                                    занятие</label>
+                                <div class="sup-block">
+                                    <div class="sup-modal">
+                                        <p class="text">
+                                            Какие у тебя тут могут быть вопросы ?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input__box box-checkbox-white">
+                                <input type="checkbox" class="input input-checkbox"
+                                       id="form-catalog-main-checkbox-discount" name="form-catalog-main-checkbox">
+                                <label for="form-catalog-main-checkbox-discount" class="label">Скидки</label>
+                            </div>
+                            <div class="input__box box-checkbox-white">
+                                <input type="checkbox" class="input input-checkbox"
+                                       id="form-catalog-main-checkbox-has-license" name="form-catalog-main-checkbox">
+                                <label for="form-catalog-main-checkbox-has-license" class="label">Наличие
+                                    лицензии</label>
+                                <div class="sup-block">
+                                    <div class="sup-modal">
+                                        <p class="text">
+                                            Какие у тебя тут могут быть вопросы ?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input__field field-button">
+                            <button class="link link-white-border">
+                                Найти
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="catalog__form-tags">
+                <div class="tags-wrapper">
+                    <ul class="list list-tags">
+                        <li class="list__item"><span class="text">Математика</span><i class="icon icon-close"></i></li>
+                        <li class="list__item"><span class="text">Москва</span><i class="icon icon-close"></i></li>
+                        <li class="list__item item-clear">
+                            <a href="javascript:;" class="link link-text-primary">Сбросить</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="catalog__form-sort">
+                <div class="sort-wrapper">
+                    <div class="sort-title">
+                        <span class="text">
+                            Сортировать:
+                        </span>
+                    </div>
+                    <div class="selector selector-sort">
+                        <select class="select">
+                            <option value="1" selected>по возрастанию цены</option>
+                            <option value="2">по убыванию цены</option>
+                            <option value="3">по рейтингу</option>
+                            <option value="4">по наименованию</option>
+                            <option value="5">по популярности (по числу отзывов)</option>
+                        </select>
+                        <div class="selector-menu">
+                            <div class="menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="catalog__wrapper">
+            <div class="catalog__item">
+                <div class="catalog__item-inner">
+                    <div class="item__col">
+                        <div class="item__logo">
+                            <img src="./img/parta-logo.png" alt="" class="image">
+                        </div>
+                        <div class="item__rating">
+                            <ul class="list list-rating-stars">
+                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            </ul>
+                            <div class="rating-count">
+                            <span class="count">
+                                365
+                            </span>
+                                <span class="text">
+                                Отзывов
+                            </span>
+                            </div>
+                        </div>
+                        <div class="item__grade">
+                            <span class="count">100</span><span class="text">Наша оценка</span>
+                        </div>
+                    </div>
+                    <div class="item__col">
+                        <div class="item__title">
+                        <span class="text">
+                            Онлайн-школа <span class="name">Parta</span>
+                        </span>
+                        </div>
+                        <div class="item__list">
+                            <ul class="list list-text-count">
+                                <li class="list__item"><span class="text">Кол-во предметов</span><span
+                                        class="count">19</span></li>
+                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
+                                        class="icon icon-close"></i></span></li>
+                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
+                                        class="icon icon-check"></i></span></li>
+                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item__col col-control">
+                        <div class="item__price">
+                        <span class="text">
+                            от <span class="count">900</span> ₽ / час
+                        </span>
+                        </div>
+                        <div class="item__control-wrapper">
+                            <div class="item__control control-global">
+                                <a href="javascript:;" class="link">
+                                    <i class="icon icon-global"></i>
+                                    <span class="text">На сайт</span>
+                                </a>
+                            </div>
+                            <div class="item__control-double">
+                                <div class="item__control control-favorite">
+                                    <a href="javascript:;" class="link">
+                                        <i class="icon icon-heart-filled"></i>
+                                    </a>
+                                </div>
+                                <div class="item__control">
+                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section-catalog.html-->
 </div>
 <!-- end content.html-->
 <!-- start sidebar.html-->
 <aside class="sidebar">
-
-    <div class="sidebar__title">
+    <div class="sidebar__item item-rating">
+        <div class="sidebar__title">
             <span class="text">
                 Рейтинг Школ
             </span>
-        <a href="javascript:;" class="link link-text-primary">
-            Весь рейтинг
-        </a>
-    </div>
-
-    <ul class="sidebar__catalog catalog-rating">
-        <li class="catalog__item -with-sup -best">
-            <div class="catalog__item-inner">
-                <div class="item-content">
-                    <div class="item-content-wrapper">
-                        <div class="item__number"></div>
-                        <div class="item__logo">
-                            <a href="javascript:;" class="link">
-                                <img src="./img/parta-logo.png" alt="" class="image">
-                            </a>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
+            <a href="javascript:;" class="link link-text-primary">
+                Весь рейтинг
+            </a>
+        </div>
+        <ul class="sidebar__catalog catalog-rating">
+            <li class="catalog__item -with-sup -best">
+                <div class="catalog__item-inner">
+                    <div class="item-content">
+                        <div class="item-content-wrapper">
+                            <div class="item__number"></div>
+                            <div class="item__logo">
                                 <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
+                                    <img src="./img/parta-logo.png" alt="" class="image">
                                 </a>
                             </div>
-                            <div class="item__control control-favorite">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-heart-filled"></i>
-                                </a>
+                            <div class="item__control-wrapper">
+                                <div class="item__control control-global">
+                                    <a href="javascript:;" class="link">
+                                        <i class="icon icon-global"></i>
+                                    </a>
+                                </div>
+                                <div class="item__control control-favorite">
+                                    <a href="javascript:;" class="link">
+                                        <i class="icon icon-heart-filled"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="item-bottom">
-                    <ul class="item__rating list list-rating-stars">
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                    </ul>
-                    <div class="item__price">
+                    <div class="item-bottom">
+                        <ul class="item__rating list list-rating-stars">
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                        </ul>
+                        <div class="item__price">
                         <span class="text">
                             от <span class="count">900</span> ₽ / час
                         </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="item__sup">
+                <div class="item__sup">
                     <span class="text">
                         Лучшая школа
                     </span>
-            </div>
-        </li>
-        <li class="catalog__item">
-            <div class="catalog__item-inner">
-                <div class="item-content">
-                    <div class="item-content-wrapper">
-                        <div class="item__number"></div>
-                        <div class="item__logo">
-                            <a href="javascript:;" class="link">
-                                <img src="./img/profi-logo.png" alt="" class="image">
-                            </a>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
+                </div>
+            </li>
+            <li class="catalog__item">
+                <div class="catalog__item-inner">
+                    <div class="item-content">
+                        <div class="item-content-wrapper">
+                            <div class="item__number"></div>
+                            <div class="item__logo">
                                 <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
+                                    <img src="./img/profi-logo.png" alt="" class="image">
                                 </a>
                             </div>
-                            <div class="item__control control-favorite">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-heart-filled"></i>
-                                </a>
+                            <div class="item__control-wrapper">
+                                <div class="item__control control-global">
+                                    <a href="javascript:;" class="link">
+                                        <i class="icon icon-global"></i>
+                                    </a>
+                                </div>
+                                <div class="item__control control-favorite">
+                                    <a href="javascript:;" class="link">
+                                        <i class="icon icon-heart-filled"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="item-bottom">
-                    <ul class="item__rating list list-rating-stars">
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                    </ul>
-                    <div class="item__price">
+                    <div class="item-bottom">
+                        <ul class="item__rating list list-rating-stars">
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                        </ul>
+                        <div class="item__price">
                         <span class="text">
                             от <span class="count">1 200</span> ₽ / час
                         </span>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="catalog__item">
-            <div class="catalog__item-inner">
-                <div class="item-content">
-                    <div class="item-content-wrapper">
-                        <div class="item__number"></div>
-                        <div class="item__logo">
-                            <a href="javascript:;" class="link">
-                                <img src="./img/maximum-logo.png" alt="" class="image">
-                            </a>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                </a>
-                            </div>
-                            <div class="item__control control-favorite">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-heart-filled"></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="item-bottom">
-                    <ul class="item__rating list list-rating-stars">
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                    </ul>
-                    <div class="item__price">
+            </li>
+            <li class="catalog__item">
+                <div class="catalog__item-inner">
+                    <div class="item-content">
+                        <div class="item-content-wrapper">
+                            <div class="item__number"></div>
+                            <div class="item__logo">
+                                <a href="javascript:;" class="link">
+                                    <img src="./img/maximum-logo.png" alt="" class="image">
+                                </a>
+                            </div>
+                            <div class="item__control-wrapper">
+                                <div class="item__control control-global">
+                                    <a href="javascript:;" class="link">
+                                        <i class="icon icon-global"></i>
+                                    </a>
+                                </div>
+                                <div class="item__control control-favorite">
+                                    <a href="javascript:;" class="link">
+                                        <i class="icon icon-heart-filled"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-bottom">
+                        <ul class="item__rating list list-rating-stars">
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                        </ul>
+                        <div class="item__price">
                         <span class="text">
                             от <span class="count">600</span> ₽ / час
                         </span>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="catalog__item -with-sup -choose">
-            <div class="catalog__item-inner">
-                <div class="item-content">
-                    <div class="item-content-wrapper">
-                        <div class="item__number"></div>
-                        <div class="item__logo">
-                            <a href="javascript:;" class="link">
-                                <img src="./img/fox-logo.png" alt="" class="image">
-                            </a>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                </a>
-                            </div>
-                            <div class="item__control control-favorite">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-heart-filled"></i>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="item-bottom">
-                    <ul class="item__rating list list-rating-stars">
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                    </ul>
-                    <div class="item__price">
+            </li>
+            <li class="catalog__item -with-sup -choose">
+                <div class="catalog__item-inner">
+                    <div class="item-content">
+                        <div class="item-content-wrapper">
+                            <div class="item__number"></div>
+                            <div class="item__logo">
+                                <a href="javascript:;" class="link">
+                                    <img src="./img/fox-logo.png" alt="" class="image">
+                                </a>
+                            </div>
+                            <div class="item__control-wrapper">
+                                <div class="item__control control-global">
+                                    <a href="javascript:;" class="link">
+                                        <i class="icon icon-global"></i>
+                                    </a>
+                                </div>
+                                <div class="item__control control-favorite">
+                                    <a href="javascript:;" class="link">
+                                        <i class="icon icon-heart-filled"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-bottom">
+                        <ul class="item__rating list list-rating-stars">
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                        </ul>
+                        <div class="item__price">
                         <span class="text">
                             от <span class="count">900</span> ₽ / час
                         </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="item__sup">
+                <div class="item__sup">
                     <span class="text">
                         Выбор редакции
                     </span>
-            </div>
-        </li>
-        <li class="catalog__item">
-            <div class="catalog__item-inner">
-                <div class="item-content">
-                    <div class="item-content-wrapper">
-                        <div class="item__number"></div>
-                        <div class="item__logo">
-                            <a href="javascript:;" class="link">
-                                <img src="./img/umskul-logo.png" alt="" class="image">
-                            </a>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
+                </div>
+            </li>
+            <li class="catalog__item">
+                <div class="catalog__item-inner">
+                    <div class="item-content">
+                        <div class="item-content-wrapper">
+                            <div class="item__number"></div>
+                            <div class="item__logo">
                                 <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
+                                    <img src="./img/umskul-logo.png" alt="" class="image">
                                 </a>
                             </div>
-                            <div class="item__control control-favorite">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-heart-filled"></i>
-                                </a>
+                            <div class="item__control-wrapper">
+                                <div class="item__control control-global">
+                                    <a href="javascript:;" class="link">
+                                        <i class="icon icon-global"></i>
+                                    </a>
+                                </div>
+                                <div class="item__control control-favorite">
+                                    <a href="javascript:;" class="link">
+                                        <i class="icon icon-heart-filled"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="item-bottom">
-                    <ul class="item__rating list list-rating-stars">
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                        <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                    </ul>
-                    <div class="item__price">
+                    <div class="item-bottom">
+                        <ul class="item__rating list list-rating-stars">
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                            <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                        </ul>
+                        <div class="item__price">
                         <span class="text">
                             от <span class="count">1 100</span> ₽ / час
                         </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </li>
-    </ul>
-
-    <div class="sidebar__ban-image">
-        <a href="javascript:;" class="link">
-            <img src="./img/sidebar-image.jpg" alt="" class="image">
-        </a>
+            </li>
+        </ul>
     </div>
 
-    <div class="sidebar__title">
+    <div class="sidebar__item item-image">
+        <div class="sidebar__ban-image">
+            <a href="javascript:;" class="link">
+                <img src="./img/sidebar-image.jpg" alt="" class="image">
+            </a>
+        </div>
+    </div>
+
+    <div class="sidebar__item item-news">
+        <div class="sidebar__title">
         <span class="text">
             Новости
         </span>
-        <a href="javascript:;" class="link link-text-primary">
-            Все новости
-        </a>
-    </div>
-
-    <ul class="sidebar__catalog catalog-news">
-        <li class="catalog__item">
-            <a href="javascript:;" class="link">
-                <div class="catalog__item-inner">
-                    <div class="item__image">
-                        <div class="item__image-wrapper">
-                            <img src="./img/catalog-news-1.png" alt="" class="image">
+            <a href="javascript:;" class="link link-text-primary">
+                Все новости
+            </a>
+        </div>
+        <ul class="sidebar__catalog catalog-news">
+            <li class="catalog__item">
+                <a href="javascript:;" class="link">
+                    <div class="catalog__item-inner">
+                        <div class="item__image">
+                            <div class="item__image-wrapper">
+                                <img src="./img/catalog-news-1.png" alt="" class="image">
+                            </div>
                         </div>
-                    </div>
-                    <div class="item__content">
-                        <div class="item__title">
+                        <div class="item__content">
+                            <div class="item__title">
                             <span class="text">
                                 Как подготовиться<br>
                                 к ЕГЭ по биологии<br>
                                 с 10 класса
                             </span>
-                        </div>
-                        <div class="item__date">
+                            </div>
+                            <div class="item__date">
                             <span class="count">
                                 06.11.2020
                             </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </li>
-        <li class="catalog__item">
-            <a href="javascript:;" class="link">
-                <div class="catalog__item-inner">
-                    <div class="item__image">
-                        <div class="item__image-wrapper">
-                            <img src="./img/catalog-news-2.png" alt="" class="image">
+                </a>
+            </li>
+            <li class="catalog__item">
+                <a href="javascript:;" class="link">
+                    <div class="catalog__item-inner">
+                        <div class="item__image">
+                            <div class="item__image-wrapper">
+                                <img src="./img/catalog-news-2.png" alt="" class="image">
+                            </div>
                         </div>
-                    </div>
-                    <div class="item__content">
-                        <div class="item__title">
+                        <div class="item__content">
+                            <div class="item__title">
                             <span class="text">
                                 Как выбрать<br> онлан-школу?
                             </span>
-                        </div>
-                        <div class="item__date">
+                            </div>
+                            <div class="item__date">
                             <span class="count">
                                 06.11.2020
                             </span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </li>
-        <li class="catalog__item">
-            <a href="javascript:;" class="link">
-                <div class="catalog__item-inner">
-                    <div class="item__image">
-                        <div class="item__image-wrapper">
-                            <img src="./img/catalog-news-3.png" alt="" class="image">
+                </a>
+            </li>
+            <li class="catalog__item">
+                <a href="javascript:;" class="link">
+                    <div class="catalog__item-inner">
+                        <div class="item__image">
+                            <div class="item__image-wrapper">
+                                <img src="./img/catalog-news-3.png" alt="" class="image">
+                            </div>
                         </div>
-                    </div>
-                    <div class="item__content">
-                        <div class="item__title">
+                        <div class="item__content">
+                            <div class="item__title">
                             <span class="text">
                                 Как подготовиться<br>
                                 к ЕГЭ по математике<br>
                                 с 10 класса
                             </span>
-                        </div>
-                        <div class="item__date">
+                            </div>
+                            <div class="item__date">
                             <span class="count">
                                 06.11.2020
                             </span>
+                            </div>
                         </div>
                     </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section__item item-quiz">
+        <div class="sidebar__quiz">
+            <div class="quiz__image">
+                <div class="quiz__image-wrapper">
+                    <img src="./img/sidebar-quiz.jpg" alt="" class="image">
                 </div>
-            </a>
-        </li>
-    </ul>
-
-    <div class="sidebar__quiz">
-        <div class="quiz__image">
-            <div class="quiz__image-wrapper">
-                <img src="./img/sidebar-quiz.jpg" alt="" class="image">
             </div>
-        </div>
 
-        <div class="quiz__content">
-            <div class="quiz__title">
+            <div class="quiz__content">
+                <div class="quiz__title">
                 <span class="text">
                     Как вам сверстанный сайт ?
                 </span>
+                </div>
+                <ul class="list list-quiz quiz-sidebar">
+                    <li class="list__item" data-item="1"><span class="text">Ну такое</span><i class="icon"></i></li>
+                    <li class="list__item" data-item="2"><span class="text">Максимально шикарный</span><i class="icon"></i></li>
+                    <li class="list__item" data-item="3"><span class="text">Можно было и лучше</span><i class="icon"></i></li>
+                    <li class="list__item" data-item="4"><span class="text">Отлично</span><i class="icon"></i></li>
+                </ul>
             </div>
-            <ul class="list list-quiz quiz-sidebar">
-                <li class="list__item" data-item="1"><span class="text">Ну такое</span><i class="icon"></i></li>
-                <li class="list__item" data-item="2"><span class="text">Максимально шикарный</span><i class="icon"></i></li>
-                <li class="list__item" data-item="3"><span class="text">Можно было и лучше</span><i class="icon"></i></li>
-                <li class="list__item" data-item="4"><span class="text">Отлично</span><i class="icon"></i></li>
-            </ul>
         </div>
     </div>
 </aside>
