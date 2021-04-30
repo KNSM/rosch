@@ -1,0 +1,27 @@
+.rec-block {
+  margin-bottom: 25px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.rec-main {
+    background: #3D96FB;
+    border-radius: 8px;
+
+    .rec {
+      &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 115px;
+
+        .text {
+          font-size: 21px;
+          font-weight: 500;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

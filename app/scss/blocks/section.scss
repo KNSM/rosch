@@ -1,5 +1,33 @@
 .section {
 
+  &__title, &__nav, &__text, &__text .text, &__list, &__table {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .section__item {
+    margin-bottom: 34px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .section__title {
+    .text {
+      font-weight: 700;
+    }
+  }
+
+  .section__text {
+    .text {
+      font-size: 15px;
+      line-height: 2;
+    }
+  }
 }
 
 
@@ -7,8 +35,210 @@
 
   .section {
 
+    &.section-catalog {
+      margin-bottom: 26px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &.section-about {
+      padding: 40px 50px 70px 50px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      margin-bottom: 26px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .section__nav {
+        background: #F5FAFF;
+        border-radius: 8px;
+        padding: 20px 24px;
+
+        .nav__title {
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .text {
+            font-weight: 700;
+          }
+        }
+
+        .list {
+          .list__item {
+            margin-bottom: 10px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
     &.section-recommend {
       margin-top: 74px;
+    }
+  }
+}
+
+.type-school-inner {
+  .section {
+
+    &.section-description {
+      padding: 40px 50px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      margin-bottom: 26px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .text {
+        font-size: 14px;
+      }
+    }
+
+    &.section-catalog {
+      margin-bottom: 26px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &.section-about {
+      padding: 40px 50px 70px 50px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      margin-bottom: 26px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .section__nav {
+        background: #F5FAFF;
+        border-radius: 8px;
+        padding: 20px 24px;
+
+        .nav__title {
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .text {
+            font-weight: 700;
+          }
+        }
+
+        .list {
+          .list__item {
+            margin-bottom: 10px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &.section-recommend {
+      margin-top: 74px;
+    }
+  }
+}
+
+.type-school-detail {
+  .section {
+
+    &.section-recommend {
+      margin-top: 55px;
+    }
+
+    &.section-teachers {
+      margin-bottom: 70px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .section__title {
+        margin-bottom: 26px;
+      }
+    }
+
+    &.section-reviews {
+      margin-bottom: 70px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &.section-faq {
+      margin-bottom: 26px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .section__title {
+        margin-bottom: 34px;
+      }
+    }
+
+    &.section-contacts {
+      margin-bottom: 57px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      padding: 50px 70px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .section__title {
+        margin-bottom: 26px;
+      }
+    }
+
+    &.section-services {
+
+      .section__table-search {
+
+          .table__button {
+            text-align: center;
+          }
+      }
+
+      .section__table-form {
+        margin-bottom: 30px;
+        background: #3D95F5;
+        border-radius: 8px;
+        padding: 30px;
+      }
+
+      .section__table-wrapper {
+          background: #FFFFFF;
+          border-radius: 8px;
+          padding: 35px 40px;
+          margin-bottom: 25px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
     }
   }
 }

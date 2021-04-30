@@ -2,6 +2,18 @@
   cursor: pointer;
   transition: .2s;
 
+  &.link-text-default {
+    color: $defaultColor;
+
+    &:hover {
+      color: $primaryColor;
+    }
+
+    &:active {
+      color: $primaryColorActive;
+    }
+  }
+
   &.link-white-border {
     display: inline-flex;
     color: #fff;
@@ -63,6 +75,37 @@
 
     &:active {
       color: $primaryColorActive;
+    }
+  }
+
+  &.link-icon-text-primary {
+    display: inline-flex;
+    color: $primaryColor;
+    margin: 0 -4px;
+
+    .icon {
+      color: $primaryColor;
+      margin: 0 4px;
+    }
+
+    .text {
+      margin: 0 4px;
+    }
+
+    &:hover {
+      color: $primaryColorHover;
+
+      .icon {
+        color: $primaryColorHover;
+      }
+    }
+
+    &:active {
+      color: $primaryColorActive;
+
+      .icon {
+        color: $primaryColorActive;
+      }
     }
   }
 }

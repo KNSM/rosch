@@ -1,5 +1,41 @@
 .form {
 
+  &.form-services {
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .form {
+      &__wrapper {
+        display: flex;
+        margin: 0 -8px;
+      }
+
+      &__item {
+        flex: 1 1 auto;
+      }
+
+      &__button {
+        flex: 0 0 auto;
+      }
+
+      &__item, &__button {
+        margin: 0 8px;
+      }
+    }
+
+    .input__field {
+      margin: 0 6px;
+      flex: 1 1 auto;
+
+      &-wrapper {
+        display: flex;
+        margin: 0 -6px;
+      }
+    }
+  }
+
   &.form-header-search {
     .input__field {
       position: relative;
@@ -20,7 +56,9 @@
       &[type="search"]::-webkit-search-decoration,
       &[type="search"]::-webkit-search-cancel-button,
       &[type="search"]::-webkit-search-results-button,
-      &[type="search"]::-webkit-search-results-decoration { display: none; }
+      &[type="search"]::-webkit-search-results-decoration {
+        display: none;
+      }
 
       &:hover, &:focus {
         box-shadow: 0 0 10px 0 rgba($primaryColor, .1);

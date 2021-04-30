@@ -1,0 +1,18 @@
+.text {
+
+  &-primary {
+    color: $primaryColor;
+  }
+
+  &-gray {
+    color: $grayColor;
+  }
+
+  &-greend {
+    color: $greenColor;
+  }
+
+  &-default {
+    color: $defaultColor;
+  }
+}

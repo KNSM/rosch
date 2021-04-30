@@ -171,4 +171,220 @@ $(document).ready(function () {
             });
         });
     });
+
+    //main catalog
+    $(function () {
+        var catalogWrapper = $('.catalog-main .catalog__wrapper');
+
+        if (catalogWrapper != null) {
+
+            catalogWrapper.each(function () {
+                var catalogButton = $(this).parent().find('.catalog__button .link'),
+                    currentWrapper = $(this),
+                    catalogItem = $(this).find('.catalog__item');
+
+                if (catalogItem.length > 4) {
+                    catalogButton.parent().show();
+                }
+
+                for (var i = 0; i < catalogItem.length; i++) {
+                    if (i > 3) {
+                        $(catalogItem[i]).addClass('-hidden-item');
+                    } else {
+                        $(catalogItem[i]).show();
+                    }
+                }
+
+                catalogButton.click(function () {
+
+                    var items = currentWrapper.find('.-hidden-item'),
+                        hiddenItems = [];
+
+                    for (var i = 0; i < items.length; i++) {
+                        if (!$(items[i]).hasClass('-opened')) {
+                            hiddenItems.push(items[i]);
+                        }
+                    }
+
+                    if (hiddenItems.length > 4) {
+                        for (i = 0; i < 4; i++) {
+                            $(hiddenItems[i]).fadeIn();
+                            $(hiddenItems[i]).addClass('-opened');
+                        }
+                    } else if (hiddenItems.length <= 4 && hiddenItems.length > 0) {
+                        for (i = 0; i < hiddenItems.length; i++) {
+                            $(hiddenItems[i]).fadeIn();
+                            $(hiddenItems[i]).addClass('-opened');
+                            $(this).text('Скрыть');
+                        }
+                    } else if (hiddenItems.length === 0) {
+                        items.fadeOut();
+                        items.removeClass('-opened');
+                        $(this).text('Показать еще');
+                    }
+                });
+            });
+        }
+    });
+
+    //accordion
+    $(function () {
+        var accordion = $('.accordion');
+
+        accordion.each(function () {
+            var accordionItem = $(this).find('.accordion__item');
+
+            accordionItem.each(function () {
+                var accordionInner = $(this).find('.accordion__inner'),
+                    accordionArrow = $(this).find('.accordion__arrow'),
+                    accordionHeader = $(this).find('.accordion__header'),
+                    currentItem = $(this);
+
+                if (accordionHeader.length) {
+                    accordionHeader.click(function () {
+                        if (currentItem.hasClass('-active')) {
+                            accordionInner.slideUp();
+                            currentItem.removeClass('-active');
+                        } else {
+                            accordionInner.slideDown();
+                            currentItem.addClass('-active');
+                        }
+                    });
+                } else {
+                    accordionArrow.click(function () {
+                        if (currentItem.hasClass('-active')) {
+                            currentItem.removeClass('-active');
+                            accordionInner.slideUp();
+                        } else {
+                            currentItem.addClass('-active');
+                            accordionInner.slideDown();
+                        }
+                    });
+                }
+            });
+        });
+    });
+
+    //control-favorite
+    $('.control-favorite').click(function () {
+        $(this).toggleClass('-active');
+    })
+
+    //sliders
+    $(function () {
+        var slider = $('.slider');
+
+        slider.each(function () {
+            var currentSlider = $(this),
+                sliderWrapper = $(this).find('.slider__wrapper');
+
+            if (currentSlider.length && currentSlider.hasClass('slider-teachers')) {
+                sliderWrapper.slick({
+                    infinite: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: true,
+                    prevArrow: $(this).find('.slider-button-prev'),
+                    nextArrow: $(this).find('.slider-button-next'),
+                });
+            }
+        });
+    });
+
+
+    //reviews catalog
+    $(function () {
+        var catalogWrapper = $('.catalog-reviews .catalog__wrapper');
+
+        if (catalogWrapper != null) {
+
+            catalogWrapper.each(function () {
+                var catalogButton = $(this).parent().find('.catalog__button .link'),
+                    currentWrapper = $(this),
+                    catalogItem = $(this).find('.catalog__item');
+
+                if (catalogItem.length > 2) {
+                    catalogButton.parent().show();
+                }
+
+                for (var i = 0; i < catalogItem.length; i++) {
+                    if (i > 1) {
+                        $(catalogItem[i]).addClass('-hidden-item');
+                    } else {
+                        $(catalogItem[i]).show();
+                    }
+                }
+
+                catalogButton.click(function () {
+                    var items = currentWrapper.find('.-hidden-item'),
+                        hiddenItems = [];
+
+                    for (var i = 0; i < items.length; i++) {
+                        if (!$(items[i]).hasClass('-opened')) {
+                            hiddenItems.push(items[i]);
+                        }
+                    }
+
+                    if (hiddenItems.length > 2) {
+                        for (i = 0; i < 2; i++) {
+                            $(hiddenItems[i]).fadeIn();
+                            $(hiddenItems[i]).addClass('-opened');
+                        }
+                    } else if (hiddenItems.length <= 2 && hiddenItems.length > 0) {
+                        for (i = 0; i < hiddenItems.length; i++) {
+                            $(hiddenItems[i]).fadeIn();
+                            $(hiddenItems[i]).addClass('-opened');
+                            $(this).text('Скрыть');
+                        }
+                    } else if (hiddenItems.length === 0) {
+                        items.fadeOut();
+                        items.removeClass('-opened');
+                        $(this).text('Показать еще');
+                    }
+                });
+            });
+        }
+    });
+
+
+    //services detail table
+    $(function () {
+        var tableWrapper = $('.section__table-search .section__table-wrapper .table-info');
+
+        if (tableWrapper != null) {
+
+            tableWrapper.each(function () {
+                var tableButton = $(this).parent().find('.table__button .link'),
+                    currentWrapper = $(this),
+                    tableItem = $(this).find('tr');
+
+                if (tableItem.length > 5) {
+                    tableButton.parent().show();
+                }
+
+                for (var i = 0; i < tableItem.length; i++) {
+                    if (i > 5) {
+                        $(tableItem[i]).addClass('-hidden-item');
+                    } else {
+                        $(tableItem[i]).show();
+                    }
+                }
+
+                tableButton.click(function () {
+                    var items = currentWrapper.find('.-hidden-item');
+
+                    if (items.hasClass('-opened')) {
+                        items.removeClass('-opened');
+                        items.fadeOut();
+                        tableButton.text('Показать весь список');
+                    } else {
+                        items.addClass('-opened');
+                        items.fadeIn();
+                        tableButton.text('Скрыть список')
+                    }
+                });
+            });
+        }
+    });
 });

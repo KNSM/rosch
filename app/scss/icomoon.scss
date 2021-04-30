@@ -87,8 +87,32 @@
   &.icon-heart-filled:before {
     content: "\e913";
   }
-  &.icon-arrow-right:before {
+  &.icon-arrow-right-bold:before {
     content: "\e914";
+  }
+  &.icon-instagram-border:before {
+    content: "\e915";
+  }
+  &.icon-vk-border:before {
+    content: "\e916";
+  }
+  &.icon-arrow-down-bold:before {
+    content: "\e917";
+  }
+  &.icon-arrow-left:before {
+    content: "\e918";
+  }
+  &.icon-arrow-right:before {
+    content: "\e919";
+  }
+  &.icon-dislike:before {
+    content: "\e91a";
+  }
+  &.icon-like:before {
+    content: "\e91b";
+  }
+  &.icon-arrow-reverse:before {
+    content: "\e91c";
   }
 
 }
