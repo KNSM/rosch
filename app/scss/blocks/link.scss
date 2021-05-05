@@ -2,6 +2,34 @@
   cursor: pointer;
   transition: .2s;
 
+  &.link-promo {
+    display: inline-flex;
+    background: #22293C;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    padding: 5px 24px;
+    color: #fff;
+
+    .text, .icon {
+      margin: 0 10px;
+      transition: .2s;
+    }
+
+    .icon {
+      font-size: 12px;
+    }
+
+    &:hover {
+      background: #363E5B;
+    }
+
+    &:active {
+      background: #171D28;
+    }
+  }
+
   &.link-text-default {
     color: $defaultColor;
 

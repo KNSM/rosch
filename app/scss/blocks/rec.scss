@@ -21,6 +21,16 @@
           font-weight: 500;
           color: #fff;
         }
+
+        @media (max-width: $bpTablet) {
+          height: 105px;
+        }
+        @media (max-width: $bpMobile) {
+          height: 90px;
+        }
+        @media (max-width: $bpPhone) {
+          height: 77px;
+        }
       }
     }
   }

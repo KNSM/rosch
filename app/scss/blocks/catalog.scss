@@ -50,9 +50,26 @@
       }
 
       &-inner {
-        display: flex;
         padding: 30px;
+
+        @media (max-width: $bpTablet) {
+          padding: 25px;
+        }
+        @media (max-width: $bpMobile) {
+          padding: 20px;
+        }
+        @media (max-width: $bpPhone) {
+          padding: 15px;
+        }
+      }
+
+      &-wrapper {
+        display: flex;
         margin: 0 -17px -20px;
+
+        @media (max-width: $bpMobile) {
+          flex-wrap: wrap;
+        }
       }
 
       .item {
@@ -60,13 +77,12 @@
           margin: 0 17px 20px;
           flex: 1 1 auto;
 
-          &:first-child {
-            width: 200px;
-            flex: 0 0 auto;
+          @media (max-width: $bpPhone) {
+            margin: 0 17px 14px;
           }
 
-          &:last-child {
-            width: 170px;
+          &.col-logo {
+            width: 200px;
             flex: 0 0 auto;
           }
 
@@ -74,6 +90,58 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            width: 170px;
+            flex: 0 0 auto;
+          }
+
+          @media (max-width: $bpMobile) {
+            width: 100%;
+
+            &.col-content {
+              width: calc(100% - 34px);
+              order: 2;
+            }
+
+            &.col-logo {
+              order: 0;
+              width: calc(50% - 34px);
+            }
+
+            &.col-control {
+              order: 1;
+              width: calc(50% - 34px);
+            }
+          }
+
+          @media (max-width: $bpPhone) {
+
+            &.col-logo {
+              order: 0;
+              width: calc(100% - 34px);
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: space-between;
+            }
+            &.col-content {
+              order: 1;
+              width: calc(100% - 34px);
+
+              .item__list {
+                display: none;
+              }
+
+              .item__title {
+                margin-bottom: 0;
+              }
+            }
+
+            &.col-control {
+              order: 2;
+              width: calc(100% - 34px);
+              flex-direction: row;
+              align-items: center;
+            }
           }
         }
 
@@ -87,6 +155,15 @@
           align-items: center;
           padding: 40px 10px;
           margin-bottom: 18px;
+
+          @media (max-width: $bpMobile) {
+            padding: 25px 10px;
+          }
+
+          @media (max-width: $bpPhone) {
+            padding: 15px 10px;
+            width: calc(50% - 10px);
+          }
 
           &:last-child {
             margin-bottom: 0;
@@ -103,7 +180,6 @@
           align-items: center;
           margin-bottom: 15px;
 
-
           &:last-child {
             margin-bottom: 0;
           }
@@ -112,6 +188,21 @@
             margin-left: 10px;
             .count {
               font-weight: 500;
+            }
+          }
+
+          @media (max-width: $bpPhone) {
+            width: calc(50% - 10px);
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            text-align: right;
+
+            .list-rating-stars {
+              margin-bottom: 5px;
+            }
+
+            .rating-count {
+              margin-left: 0;
             }
           }
         }
@@ -160,6 +251,13 @@
 
           .text {
             font-size: 21px;
+
+            @media (max-width: $bpPhone) {
+              font-size: 18px;
+            }
+            @media (max-width: $bpPhone) {
+              font-size: 16px;
+            }
           }
 
           .name {
@@ -171,9 +269,35 @@
           flex: 1 1 auto;
           margin-bottom: 10px;
 
+          .text {
+            white-space: nowrap;
+          }
+
           .count {
             font-size: 24px;
             font-weight: 600;
+          }
+
+          @media (max-width: $bpTablet) {
+            .count {
+              font-size: 22px;
+            }
+          }
+
+          @media (max-width: $bpMobile) {
+            .count {
+              font-size: 18px;
+            }
+          }
+
+          @media (max-width: $bpPhone) {
+            .count {
+              font-size: 15px;
+            }
+
+            .text {
+              font-size: 13px;
+            }
           }
         }
 
@@ -185,6 +309,10 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+
+            @media (max-width: $bpPhone) {
+              width: 100%;
+            }
           }
 
           &-double {
@@ -193,6 +321,10 @@
 
             .item__control {
               margin: 0 5px 10px;
+            }
+
+            @media (max-width: $bpPhone) {
+              display: none;
             }
           }
 
@@ -269,6 +401,7 @@
 
     .catalog__button {
       margin-bottom: 30px;
+      display: none;
 
       &:last-child {
         margin-bottom: 0;

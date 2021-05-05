@@ -33,6 +33,7 @@
 
     th, td {
       padding: 15px;
+      white-space: nowrap;
 
       &:not(:first-child) {
         text-align: center;

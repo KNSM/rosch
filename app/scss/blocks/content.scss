@@ -1,4 +1,15 @@
 .content {
   width: calc(100% - 440px);
   margin: 0 35px;
+
+  @media (max-width: $bpLaptop) {
+    margin: 0 25px;
+    width: calc(100% - 400px);
+  }
+
+  @media (max-width: $bpTablet) {
+    margin: 0;
+    width: 100%;
+    order: 3;
+  }
 }

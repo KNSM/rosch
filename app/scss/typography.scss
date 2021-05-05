@@ -25,6 +25,19 @@ h1, h2, h3, h4, h5, h6,
 
 h1, .h1 {
   font-size: 36px;
+
+  @media (max-width: $bpLaptop) {
+    font-size: 34px;
+  }
+  @media (max-width: $bpTablet) {
+    font-size: 32px;
+  }
+  @media (max-width: $bpMobile) {
+    font-size: 26px;
+  }
+  @media (max-width: $bpPhone) {
+    font-size: 21px;
+  }
 }
 
 h2, .h2 {

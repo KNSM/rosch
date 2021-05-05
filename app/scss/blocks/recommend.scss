@@ -1,7 +1,11 @@
 .recommend {
 
   &.recommend-special {
-    margin-top: 30px;
+
+    @media (max-width: $bpTablet) {
+      padding: 0 15px;
+      position: relative;
+    }
 
     .recommend {
 
@@ -15,9 +19,57 @@
       }
 
       &__wrapper {
-        display: flex;
-        flex-wrap: wrap;
         margin: 0 -15px -30px;
+
+        &:after {
+          content: '';
+          display: table;
+          clear: both;
+        }
+
+        @media (min-width: $bpTablet + 1) {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        @media (max-width: $bpTablet) {
+          padding-bottom: 20px;
+        }
+
+        .slick-dots {
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          display: flex;
+          justify-content: center;
+          margin: 0 -10px -10px;
+          width: 100%;
+          max-width: 100%;
+          flex-wrap: wrap;
+
+          li {
+            margin: 0 10px 10px;
+
+            button {
+              font-size: 0;
+              width: 9px;
+              height: 9px;
+              border-radius: 50%;
+              background: #DCECFF;
+              display: block;
+              border: none;
+              outline: none;
+              padding: 0;
+            }
+
+            &.slick-active {
+              button {
+                background: $primaryColor;
+              }
+            }
+          }
+        }
       }
 
       &__item {
@@ -27,6 +79,11 @@
 
         &.-hidden-item {
           display: none;
+        }
+
+        @media (max-width: $bpTablet) {
+          display: block;
+          width: 270px;
         }
 
         .item {

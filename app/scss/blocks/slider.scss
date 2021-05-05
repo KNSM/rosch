@@ -177,4 +177,58 @@
       }
     }
   }
+
+  &.slider-nav {
+    display: flex;
+    align-items: center;
+
+    .slider-menu {
+      margin-right: 15px;
+      cursor: pointer;
+
+      &:before {
+        content: '\e91f';
+        font-family: 'icomoon';
+        font-size: 24px;
+        color: $primaryColor;
+        font-weight: 500;
+      }
+    }
+
+    .slider__wrapper {
+      margin: 0 -5px;
+      overflow: hidden;
+    }
+
+    .slider__item {
+      margin: 0 5px;
+
+      .link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 42px;
+        background: #FFFFFF;
+        box-shadow: 0 15px 20px rgba(218, 218, 241, 0.15);
+        border-radius: 8px;
+        padding: 5px 20px;
+
+        &:hover {
+          background: #EBF4FE;
+          box-shadow: 0 15px 20px rgba(218, 218, 241, 0.15);
+          border-radius: 8px;
+          color: $primaryColor;
+        }
+      }
+
+      &.-active {
+        .link {
+          background: #EBF4FE;
+          box-shadow: 0 15px 20px rgba(218, 218, 241, 0.15);
+          border-radius: 8px;
+          color: $primaryColor;
+        }
+      }
+    }
+  }
 }

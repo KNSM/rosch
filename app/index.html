@@ -65,16 +65,21 @@
                             <li class="list__item"><a href="#" class="list__item-link"><i
                                     class="icon icon-reg-lock"></i><span class="text">Регистрация</span></a></li>
                         </ul>
-                        <div class="arrow">
+                        <div class="open-icon">
                             <i class="icon icon-arrow-down"></i>
+                            <i class="icon icon-user-circle"></i>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="header__menu">
+                <span class="line"></span><span class="line"></span><span class="line"></span>
+            </div>
         </div>
         <nav class="header__nav">
             <ul class="list">
-                <li class="list__item"><a href="javascript:;" class="list__item-link"><i class="icon icon-prepare"></i><span class="text">Подготовка к ЕГЭ</span></a>
+                <li class="list__item"><a href="javascript:;" class="list__item-link"><i class="icon icon-prepare"></i><span class="text">Подготовка к ЕГЭ</span></a><i class="icon icon-arrow-down"></i>
                     <ul class="sublist">
                         <li class="sublist__item"><a href="javascript:;" class="sublist__item-link">Рейтинг школ ЕГЭ</a></li>
                         <li class="sublist__item"><a href="javascript:;" class="sublist__item-link">Математика</a></li>
@@ -93,7 +98,7 @@
                         <li class="sublist__item"><a href="javascript:;" class="sublist__item-link">Астрономия</a></li>
                     </ul>
                 </li>
-                <li class="list__item"><a href="javascript:;" class="list__item-link"><i class="icon icon-prepare"></i><span class="text">Подготовка к ОГЭ</span></a>
+                <li class="list__item"><a href="javascript:;" class="list__item-link"><i class="icon icon-prepare"></i><span class="text">Подготовка к ОГЭ</span></a><i class="icon icon-arrow-down"></i>
                     <ul class="sublist">
                         <li class="sublist__item"><a href="javascript:;" class="sublist__item-link">Рейтинг школ ОГЭ</a></li>
                         <li class="sublist__item"><a href="javascript:;" class="sublist__item-link">Математика</a></li>
@@ -143,12 +148,36 @@
 <!--                    </ul>-->
                 </li>
             </ul>
+
+            <div class="header__nav-control">
+                <div class="control__wrapper">
+                    <div class="control-item item-favorite">
+                        <a href="javascript:;" class="link -new">
+                            <i class="icon icon-heart"></i>
+                            <span class="text">
+                                Избранное
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header__nav-search">
+                <form action="#" class="form form-header-search">
+                    <div class="input__field">
+                        <input type="search" class="input input-search" placeholder="Поиск" name="header-search-input-nav"
+                               id="header-search-input-nav">
+                        <button class="button" type="button"></button>
+                    </div>
+                </form>
+            </div>
         </nav>
     </div>
 </header>
 <!-- end header.html-->
     <main class="main">
         <div class="container">
+            <div class="main-wrapper">
 <!-- start breadcrumbs.html-->
 <div class="breadcrumbs">
     <ul class="list">
@@ -164,7 +193,6 @@
     </h1>
 </div>
 <!-- end main-title.html-->
-            <div class="main-wrapper">
 <!-- start content.html-->
 <div class="content">
 <!-- start section-catalog.html-->
@@ -172,109 +200,119 @@
     <div class="catalog catalog-main">
         <div class="catalog__form">
             <form action="#" class="form form-catalog-main catalog-search-school">
-                <div class="form__item">
-                    <div class="input__field-wrapper">
-                        <div class="input__field -full">
-                            <input type="text" class="input input-text input-white" placeholder="Поиск по названию">
-                        </div>
-                    </div>
+                <div class="form__title">
+                    <span class="text">Фильтр</span><i class="icon icon-filter"></i>
                 </div>
 
-                <div class="form__item">
-                    <div class="input__field-wrapper">
-                        <div class="input__field field-selector">
-                            <div class="selector">
-                                <select id="form-catalog-main-object" name="form-catalog-main-object" class="select">
-                                    <option value="start" selected="selected">Предметы</option>
-                                    <option value="1">МатематикаМатематикаМатематикаМатематикаМатематикаМатематика
-                                    </option>
-                                    <option value="2">Русский язык</option>
-                                    <option value="3">Обществознание</option>
-                                    <option value="4">Биология</option>
-                                    <option value="5">История</option>
-                                    <option value="6">Английский язык</option>
-                                    <option value="7">Химия</option>
-                                    <option value="8">Физика</option>
-                                    <option value="9">Литература</option>
-                                    <option value="10">Информатика</option>
-                                    <option value="11">География</option>
-                                    <option value="12">Немецкий язык</option>
-                                    <option value="13">Французский язык</option>
-                                    <option value="14">Астрономия</option>
-                                </select>
-                                <div class="selector-menu">
-                                    <div class="menu"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input__field field-selector">
-
-                            <div class="selector">
-                                <select id="form-catalog-main-type" name="form-catalog-main-type" class="select">
-                                    <option value="start" selected="selected">Тип обучения</option>
-                                    <option value="1">Индивидуально</option>
-                                    <option value="2">В группах</option>
-                                </select>
-                                <div class="selector-menu">
-                                    <div class="menu"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input__field field-selector">
-
-                            <div class="selector">
-                                <select id="form-catalog-main-format" name="form-catalog-main-format" class="select">
-                                    <option value="start" selected="selected">Формат</option>
-                                    <option value="1">Онлайн вебинар</option>
-                                    <option value="2">Видеоурок</option>
-                                </select>
-                                <div class="selector-menu">
-                                    <div class="menu"></div>
-                                </div>
+                <div class="form__item-wrapper">
+                    <div class="form__item">
+                        <div class="input__field-wrapper">
+                            <div class="input__field -full">
+                                <input type="text" class="input input-text input-white" placeholder="Поиск по названию">
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="form__item">
-                    <div class="input__field-wrapper">
-                        <div class="input__field field-checkbox">
-                            <div class="input__box box-checkbox-white">
-                                <input type="checkbox" class="input input-checkbox"
-                                       id="form-catalog-main-checkbox-test-lesson" name="form-catalog-main-checkbox">
-                                <label for="form-catalog-main-checkbox-test-lesson" class="label">Пробное
-                                    занятие</label>
-                                <div class="sup-block">
-                                    <div class="sup-modal">
-                                        <p class="text">
-                                            Какие у тебя тут могут быть вопросы ?
-                                        </p>
+                    <div class="form__item item-selector">
+                        <div class="input__field-wrapper">
+                            <div class="input__field field-selector">
+                                <div class="selector">
+                                    <select id="form-catalog-main-object" name="form-catalog-main-object"
+                                            class="select">
+                                        <option value="start" selected="selected">Предметы</option>
+                                        <option value="1">МатематикаМатематикаМатематикаМатематикаМатематикаМатематика
+                                        </option>
+                                        <option value="2">Русский язык</option>
+                                        <option value="3">Обществознание</option>
+                                        <option value="4">Биология</option>
+                                        <option value="5">История</option>
+                                        <option value="6">Английский язык</option>
+                                        <option value="7">Химия</option>
+                                        <option value="8">Физика</option>
+                                        <option value="9">Литература</option>
+                                        <option value="10">Информатика</option>
+                                        <option value="11">География</option>
+                                        <option value="12">Немецкий язык</option>
+                                        <option value="13">Французский язык</option>
+                                        <option value="14">Астрономия</option>
+                                    </select>
+                                    <div class="selector-menu">
+                                        <div class="menu"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="input__box box-checkbox-white">
-                                <input type="checkbox" class="input input-checkbox"
-                                       id="form-catalog-main-checkbox-discount" name="form-catalog-main-checkbox">
-                                <label for="form-catalog-main-checkbox-discount" class="label">Скидки</label>
+                            <div class="input__field field-selector">
+
+                                <div class="selector">
+                                    <select id="form-catalog-main-type" name="form-catalog-main-type" class="select">
+                                        <option value="start" selected="selected">Тип обучения</option>
+                                        <option value="1">Индивидуально</option>
+                                        <option value="2">В группах</option>
+                                    </select>
+                                    <div class="selector-menu">
+                                        <div class="menu"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="input__box box-checkbox-white">
-                                <input type="checkbox" class="input input-checkbox"
-                                       id="form-catalog-main-checkbox-has-license" name="form-catalog-main-checkbox">
-                                <label for="form-catalog-main-checkbox-has-license" class="label">Наличие
-                                    лицензии</label>
-                                <div class="sup-block">
-                                    <div class="sup-modal">
-                                        <p class="text">
-                                            Какие у тебя тут могут быть вопросы ?
-                                        </p>
+                            <div class="input__field field-selector">
+
+                                <div class="selector">
+                                    <select id="form-catalog-main-format" name="form-catalog-main-format"
+                                            class="select">
+                                        <option value="start" selected="selected">Формат</option>
+                                        <option value="1">Онлайн вебинар</option>
+                                        <option value="2">Видеоурок</option>
+                                    </select>
+                                    <div class="selector-menu">
+                                        <div class="menu"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="input__field field-button">
-                            <button class="link link-white-border">
-                                Найти
-                            </button>
+                    </div>
+
+                    <div class="form__item">
+                        <div class="input__field-wrapper">
+                            <div class="input__field field-checkbox">
+                                <div class="input__box box-checkbox-white">
+                                    <input type="checkbox" class="input input-checkbox"
+                                           id="form-catalog-main-checkbox-test-lesson"
+                                           name="form-catalog-main-checkbox">
+                                    <label for="form-catalog-main-checkbox-test-lesson" class="label">Пробное
+                                        занятие</label>
+                                    <div class="sup-block">
+                                        <div class="sup-modal">
+                                            <p class="text">
+                                                Какие у тебя тут могут быть вопросы ?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input__box box-checkbox-white">
+                                    <input type="checkbox" class="input input-checkbox"
+                                           id="form-catalog-main-checkbox-discount" name="form-catalog-main-checkbox">
+                                    <label for="form-catalog-main-checkbox-discount" class="label">Скидки</label>
+                                </div>
+                                <div class="input__box box-checkbox-white">
+                                    <input type="checkbox" class="input input-checkbox"
+                                           id="form-catalog-main-checkbox-has-license"
+                                           name="form-catalog-main-checkbox">
+                                    <label for="form-catalog-main-checkbox-has-license" class="label">Наличие
+                                        лицензии</label>
+                                    <div class="sup-block">
+                                        <div class="sup-modal">
+                                            <p class="text">
+                                                Какие у тебя тут могут быть вопросы ?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input__field field-button">
+                                <button class="link link-white-border">
+                                    Найти
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -316,71 +354,75 @@
         <ul class="catalog__wrapper">
             <li class="catalog__item -with-sup">
                 <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
+                    <div class="catalog__item-wrapper">
+                        <div class="item__col col-logo">
+                            <div class="item__logo">
+                                <img src="./img/parta-logo.png" alt="" class="image">
+                            </div>
+                            <div class="item__rating">
+                                <ul class="list list-rating-stars">
+                                    <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                    <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                    <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                    <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                    <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                </ul>
+                                <div class="rating-count">
                             <span class="count">
                                 365
                             </span>
-                                <span class="text">
+                                    <span class="text">
                                 Отзывов
                             </span>
+                                </div>
+                            </div>
+                            <div class="item__grade">
+                                <span class="count">100</span><span class="text">Наша оценка</span>
                             </div>
                         </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
+                        <div class="item__col col-content">
+                            <div class="item__title">
+                            <span class="text">
+                                Онлайн-школа <span class="name">Parta</span>
+                            </span>
+                            </div>
+                            <div class="item__list">
+                                <ul class="list list-text-count">
+                                    <li class="list__item"><span class="text">Кол-во предметов</span><span
+                                            class="count">19</span></li>
+                                    <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
+                                            class="icon icon-close"></i></span></li>
+                                    <li class="list__item"><span class="text">Наличие лицензии</span><span
+                                            class="count"><i
+                                            class="icon icon-check"></i></span></li>
+                                    <li class="list__item"><span class="text">Формат</span><span
+                                            class="count">online</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
+                        <div class="item__col col-control">
+                            <div class="item__price">
                         <span class="text">
                             от <span class="count">900</span> ₽ / час
                         </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
                             </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
+                            <div class="item__control-wrapper">
+                                <div class="item__control control-global">
                                     <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
+                                        <i class="icon icon-global"></i>
+                                        <span class="text">На сайт</span>
                                     </a>
                                 </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
+                                <div class="item__control-double">
+                                    <div class="item__control control-favorite">
+                                        <a href="javascript:;" class="link">
+                                            <i class="icon icon-heart"></i>
+                                        </a>
+                                    </div>
+                                    <div class="item__control">
+                                        <a href="javascript:;" class="link link-primary">Подробнее</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -394,1312 +436,75 @@
             </li>
             <li class="catalog__item">
                 <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
+                    <div class="catalog__item-wrapper">
+                        <div class="item__col col-logo">
+                            <div class="item__logo">
+                                <img src="./img/parta-logo.png" alt="" class="image">
+                            </div>
+                            <div class="item__rating">
+                                <ul class="list list-rating-stars">
+                                    <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                    <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                    <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                    <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                    <li class="list__item"><i class="icon icon-star-filled"></i></li>
+                                </ul>
+                                <div class="rating-count">
                             <span class="count">
                                 365
                             </span>
-                                <span class="text">
+                                    <span class="text">
                                 Отзывов
                             </span>
+                                </div>
+                            </div>
+                            <div class="item__grade">
+                                <span class="count">100</span><span class="text">Наша оценка</span>
                             </div>
                         </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
+                        <div class="item__col col-content">
+                            <div class="item__title">
                         <span class="text">
                             Онлайн-школа <span class="name">Parta</span>
                         </span>
+                            </div>
+                            <div class="item__list">
+                                <ul class="list list-text-count">
+                                    <li class="list__item"><span class="text">Кол-во предметов</span><span
+                                            class="count">19</span></li>
+                                    <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
+                                            class="icon icon-close"></i></span></li>
+                                    <li class="list__item"><span class="text">Наличие лицензии</span><span
+                                            class="count"><i
+                                            class="icon icon-check"></i></span></li>
+                                    <li class="list__item"><span class="text">Формат</span><span
+                                            class="count">online</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
+                        <div class="item__col col-control">
+                            <div class="item__price">
                         <span class="text">
                             от <span class="count">900</span> ₽ / час
                         </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
                             </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
+                            <div class="item__control-wrapper">
+                                <div class="item__control control-global">
                                     <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
+                                        <i class="icon icon-global"></i>
+                                        <span class="text">На сайт</span>
                                     </a>
                                 </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="catalog__item">
-                <div class="catalog__item-inner">
-                    <div class="item__col">
-                        <div class="item__logo">
-                            <img src="./img/parta-logo.png" alt="" class="image">
-                        </div>
-                        <div class="item__rating">
-                            <ul class="list list-rating-stars">
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                                <li class="list__item"><i class="icon icon-star-filled"></i></li>
-                            </ul>
-                            <div class="rating-count">
-                            <span class="count">
-                                365
-                            </span>
-                                <span class="text">
-                                Отзывов
-                            </span>
-                            </div>
-                        </div>
-                        <div class="item__grade">
-                            <span class="count">100</span><span class="text">Наша оценка</span>
-                        </div>
-                    </div>
-                    <div class="item__col">
-                        <div class="item__title">
-                        <span class="text">
-                            Онлайн-школа <span class="name">Parta</span>
-                        </span>
-                        </div>
-                        <div class="item__list">
-                            <ul class="list list-text-count">
-                                <li class="list__item"><span class="text">Кол-во предметов</span><span
-                                        class="count">19</span></li>
-                                <li class="list__item"><span class="text">Пробное занятие</span><span class="count"><i
-                                        class="icon icon-close"></i></span></li>
-                                <li class="list__item"><span class="text">Наличие лицензии</span><span class="count"><i
-                                        class="icon icon-check"></i></span></li>
-                                <li class="list__item"><span class="text">Формат</span><span class="count">online</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item__col col-control">
-                        <div class="item__price">
-                        <span class="text">
-                            от <span class="count">900</span> ₽ / час
-                        </span>
-                        </div>
-                        <div class="item__control-wrapper">
-                            <div class="item__control control-global">
-                                <a href="javascript:;" class="link">
-                                    <i class="icon icon-global"></i>
-                                    <span class="text">На сайт</span>
-                                </a>
-                            </div>
-                            <div class="item__control-double">
-                                <div class="item__control control-favorite">
-                                    <a href="javascript:;" class="link">
-                                        <i class="icon icon-heart"></i>
-                                    </a>
-                                </div>
-                                <div class="item__control">
-                                    <a href="javascript:;" class="link link-primary">Подробнее</a>
+                                <div class="item__control-double">
+                                    <div class="item__control control-favorite">
+                                        <a href="javascript:;" class="link">
+                                            <i class="icon icon-heart"></i>
+                                        </a>
+                                    </div>
+                                    <div class="item__control">
+                                        <a href="javascript:;" class="link link-primary">Подробнее</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2207,7 +1012,7 @@
         </ul>
     </div>
 
-    <div class="section__item item-quiz">
+    <div class="sidebar__item item-quiz">
         <div class="sidebar__quiz">
             <div class="quiz__image">
                 <div class="quiz__image-wrapper">
@@ -2559,57 +1364,70 @@
     <div class="container">
         <div class="footer__wrapper">
             <div class="footer__item footer-left">
-                <nav class="footer__nav nav-rating">
-                    <ul class="list">
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Рейтинг школ ЕГЭ</a></li>
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Рейтинг школ ОГЭ</a></li>
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Рейтинг репетиторов</a>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="footer__item-inner">
+                    <nav class="footer__nav nav-rating">
+                        <ul class="list">
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Рейтинг школ ЕГЭ</a>
+                            </li>
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Рейтинг школ ОГЭ</a>
+                            </li>
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Рейтинг
+                                репетиторов</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
             <div class="footer__item footer-right">
-                <nav class="footer__nav nav-prepare">
-                    <ul class="list">
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Подготовка к ЕГЭ</a></li>
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Подготовка к ОГЭ</a></li>
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Подготовка к
-                            олимпиадам</a></li>
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Поступление в ВУЗ</a></li>
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Репетиторы</a></li>
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Экзамены 2021</a></li>
-                    </ul>
-                </nav>
-                <nav class="footer__nav nav-about">
-                    <ul class="list">
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">О проекте</a></li>
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Контакты</a></li>
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Служба поддержки</a></li>
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Новости</a></li>
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Статьи</a></li>
-                        <li class="list__item"><a href="javascript:;" class="list__item-link">Карта сайта</a></li>
-                    </ul>
-                </nav>
-                <div class="footer__info">
-                    <div class="info-links">
-                        <a href="javascript:;" class="link link-text-primary">Пользовательское соглашение</a>
-                        <a href="javascript:;" class="link link-text-primary">Политика конфиденциальности</a>
-                    </div>
-                    <div class="info-media">
-                        <ul class="list list-media-icons">
-                            <li class="list__item"><a href="javascript:;" class="list__item-link"><i
-                                    class="icon icon-vk"></i></a></li>
-                            <li class="list__item"><a href="javascript:;" class="list__item-link"><i
-                                    class="icon icon-twitter"></i></a></li>
-                            <li class="list__item"><a href="javascript:;" class="list__item-link"><i
-                                    class="icon icon-facebook"></i></a></li>
+                <div class="footer__item-inner">
+                    <nav class="footer__nav nav-prepare">
+                        <ul class="list">
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Подготовка к ЕГЭ</a>
+                            </li>
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Подготовка к ОГЭ</a>
+                            </li>
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Подготовка к
+                                олимпиадам</a></li>
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Поступление в ВУЗ</a>
+                            </li>
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Репетиторы</a></li>
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Экзамены 2021</a></li>
                         </ul>
-                    </div>
-                    <div class="info-copyright">
-                        <div class="copyright-text">
+                    </nav>
+                    <nav class="footer__nav nav-about">
+                        <ul class="list">
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">О проекте</a></li>
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Контакты</a></li>
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Служба поддержки</a>
+                            </li>
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Новости</a></li>
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Статьи</a></li>
+                            <li class="list__item"><a href="javascript:;" class="list__item-link">Карта сайта</a></li>
+                        </ul>
+                    </nav>
+                    <div class="footer__info">
+                        <div class="footer__info-wrapper">
+                            <div class="info-item info-links">
+                                <a href="javascript:;" class="link link-text-primary">Пользовательское соглашение</a>
+                                <a href="javascript:;" class="link link-text-primary">Политика конфиденциальности</a>
+                            </div>
+                            <div class="info-item info-media">
+                                <ul class="list list-media-icons">
+                                    <li class="list__item"><a href="javascript:;" class="list__item-link"><i
+                                            class="icon icon-vk"></i></a></li>
+                                    <li class="list__item"><a href="javascript:;" class="list__item-link"><i
+                                            class="icon icon-twitter"></i></a></li>
+                                    <li class="list__item"><a href="javascript:;" class="list__item-link"><i
+                                            class="icon icon-facebook"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="info-item info-copyright">
+                                <div class="copyright-text">
                         <span class="text">
                             © «РОШ» <b>2021</b>
                         </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2625,6 +1443,7 @@
 <script src="./js/libs/jquery.masked.input.min.js"></script>
 <script src="./js/libs/jquery.fancybox.min.js"></script>
 <script src="./js/libs/fakescroll.min.js"></script>
+<script src="./js/libs/clipboard.min.js"></script>
 <script src="./js/libs/slick.min.js"></script>
 <script src="./js/libs/lazyload.min.js"></script>
 <script src="./js/main.min.js"></script>

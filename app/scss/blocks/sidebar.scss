@@ -3,11 +3,37 @@
   flex: 0 0 auto;
   margin: 0 35px 40px;
 
+  @media (max-width: $bpLaptop) {
+    margin: 0 25px 40px;
+  }
+
+  @media (max-width: $bpTablet) {
+    margin: 0 -25px 30px;
+    width: calc(100% + 50px);
+    padding: 30px 25px;
+    order: 0;
+    background: #E0EEFD;
+  }
+
+  @media (max-width: $bpMobile) {
+    padding: 25px;
+  }
+
+  @media (max-width: $bpPhone) {
+    padding: 15px 25px;
+  }
+
   &__item {
     margin-bottom: 20px;
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    &.item-news, &.item-quiz, &.item-image {
+      @media (max-width: $bpTablet) {
+        display: none;
+      }
     }
   }
 
@@ -194,6 +220,45 @@
           &__price {
             .count {
               font-weight: 600;
+            }
+          }
+        }
+      }
+
+      @media (max-width: $bpTablet) {
+        display: flex;
+        overflow-x: auto;
+
+        .catalog__item {
+          margin-bottom: 0;
+          margin-right: 10px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      @media (max-width: $bpPhone) {
+        align-items: flex-start;
+
+        .catalog__item {
+
+          &-inner {
+            padding: 12px;
+          }
+
+          .item__control {
+            display: none;
+          }
+
+          .item-bottom {
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+
+            .item__rating {
+              margin-bottom: 5px;
             }
           }
         }
