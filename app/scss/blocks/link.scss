@@ -28,6 +28,14 @@
     &:active {
       background: #171D28;
     }
+
+    @media (max-width: $bpPhone) {
+      padding: 5px 12px;
+
+      .text, .icon {
+        margin: 0 5px;
+      }
+    }
   }
 
   &.link-text-default {

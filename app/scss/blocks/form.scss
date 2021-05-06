@@ -9,7 +9,12 @@
     .form {
       &__wrapper {
         display: flex;
-        margin: 0 -8px;
+        margin: 0 -8px -16px;
+
+        @media (max-width: $bpMobile) {
+          flex-wrap: wrap;
+          justify-content: flex-end;
+        }
       }
 
       &__item {
@@ -18,20 +23,43 @@
 
       &__button {
         flex: 0 0 auto;
+
+        @media (max-width: $bpMobile) {
+          width: calc(25% - 12px);
+          .link {
+            width: 100%;
+          }
+        }
+
+        @media (max-width: $bpPhone) {
+          width: calc(100% - 12px);
+        }
       }
 
       &__item, &__button {
-        margin: 0 8px;
+        margin: 0 8px 16px;
       }
     }
 
     .input__field {
-      margin: 0 6px;
+      margin: 0 6px 16px;
       flex: 1 1 auto;
+
+      @media (max-width: $bpMobile) {
+        width: calc(50% - 12px);
+      }
+
+      @media (max-width: $bpPhone) {
+        width: calc(100% - 12px);
+      }
 
       &-wrapper {
         display: flex;
-        margin: 0 -6px;
+        margin: 0 -6px -16px;
+
+        @media (max-width: $bpMobile) {
+          flex-wrap: wrap;
+        }
       }
     }
   }

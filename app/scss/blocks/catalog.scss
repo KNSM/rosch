@@ -146,7 +146,7 @@
         }
 
         &__logo {
-          width: 100%;
+          max-width: 100%;
           background: #FFFFFF;
           box-shadow: 0 15px 20px rgba(218, 218, 241, 0.25);
           border-radius: 8px;
@@ -186,6 +186,7 @@
 
           .rating-count {
             margin-left: 10px;
+
             .count {
               font-weight: 500;
             }
@@ -350,6 +351,7 @@
             .link {
               background: #fff;
             }
+
             .icon {
               margin-right: 12px;
               color: #8294A1;
@@ -382,6 +384,10 @@
           padding: 10px;
           text-align: center;
           border-radius: 0 0 3px 3px;
+
+          @media (max-width: $bpPhone) {
+            padding: 7px;
+          }
 
           .text {
             font-size: 13px;
@@ -416,9 +422,14 @@
       .catalog__wrapper {
         counter-reset: li;
       }
+
       .catalog__item {
         .catalog__item-inner {
           padding-left: 17px;
+        }
+
+        .catalog__item-wrapper {
+          position: relative;
 
           &:before {
             counter-increment: li;
@@ -431,6 +442,31 @@
             color: $primaryColor;
             height: 48px;
           }
+
+          @media (max-width: $bpMobile) {
+            justify-content: flex-end;
+            &:before {
+              position: absolute;
+              height: 42px;
+              padding: 12px 16px;
+              font-size: 16px;
+              top: 0;
+              left: 0;
+            }
+            .item__logo {
+              margin-left: 57px;
+            }
+          }
+
+          @media (max-width: $bpPhone) {
+            .item__logo {
+              width: 100%;
+            }
+
+            .item__rating {
+              margin-bottom: 0;
+            }
+          }
         }
       }
     }
@@ -438,7 +474,7 @@
 
   &.catalog-reviews {
     .catalog__wrapper {
-        margin-bottom: 15px;
+      margin-bottom: 15px;
 
       &:last-child {
         margin-bottom: 0;

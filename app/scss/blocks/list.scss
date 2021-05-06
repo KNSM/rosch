@@ -24,6 +24,28 @@
         line-height: 1.8;
       }
     }
+
+    @media (max-width: $bpMobile) {
+      flex-wrap: wrap;
+      margin: 0 -16px -24px;
+
+      .list__item {
+        width: calc(50% - 16px);
+        margin: 0 16px 24px;
+
+        .count {
+          margin-bottom: 6px;
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      margin: 0 0 -24px;
+      .list__item {
+        width: calc(100% - 16px);
+        margin: 0 0 24px;
+      }
+    }
   }
 
   &.list-count-stars {

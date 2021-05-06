@@ -5,6 +5,7 @@
     @media (max-width: $bpTablet) {
       padding: 0 15px;
       position: relative;
+      margin: 0 -25px;
     }
 
     .recommend {
@@ -33,19 +34,20 @@
         }
 
         @media (max-width: $bpTablet) {
-          padding-bottom: 20px;
+          padding: 0 25px 20px;
+          margin: 0 -15px;
+
+          .slick-list {
+            overflow: visible;
+          }
         }
 
         .slick-dots {
-          position: absolute;
-          left: 50%;
-          bottom: 0;
-          transform: translateX(-50%);
           display: flex;
+          align-items: center;
           justify-content: center;
-          margin: 0 -10px -10px;
-          width: 100%;
-          max-width: 100%;
+          margin: 0 auto -10px;
+          max-width: calc(100% + 20px);
           flex-wrap: wrap;
 
           li {

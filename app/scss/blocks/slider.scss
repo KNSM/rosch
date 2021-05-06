@@ -18,6 +18,18 @@
           background: #fff;
           border-radius: 8px;
           text-align: center;
+
+          @media (min-width: $bpTablet + 1) and (max-width: $bpLaptop) {
+            padding: 25px 20px;
+          }
+
+          @media (max-width: $bpTablet) {
+            padding: 25px 35px;
+          }
+
+          @media (max-width: $bpMobile) {
+            padding: 20px;
+          }
         }
 
         .item {
@@ -29,10 +41,15 @@
             overflow: hidden;
 
             &-wrapper {
-              margin-bottom: 20px;
+              max-width: 200px;
+              margin: 0 auto 20px;
 
               &:last-child {
                 margin-bottom: 0;
+              }
+
+              @media (max-width: $bpMobile) {
+                max-width: 160px;
               }
             }
 
@@ -111,6 +128,10 @@
         cursor: pointer;
         transition: .2s;
 
+        @media (max-width: $bpPhone) {
+          display: none;
+        }
+
         &:before {
           font-family: 'icomoon';
           color: #8294A1;
@@ -148,26 +169,33 @@
     }
 
     .slick-dots {
-      position: absolute;
       display: flex;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
-      margin: 0 -15px -10px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px auto -10px;
+      max-width: calc(100% + 30px);
 
       li {
         margin: 0 15px 10px;
-      }
+        flex: 0 0 auto;
 
-      button {
-        font-size: 0;
-        width: 13px;
-        height: 13px;
-        border: none;
-        outline: none;
-        border-radius: 50%;
-        background: #E1EBF4;
-        cursor: pointer;
+        button {
+          font-size: 0;
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          background: #dcecff;
+          display: block;
+          border: none;
+          outline: none;
+          padding: 0;
+
+          @media (max-width: $bpMobile) {
+            width: 9px;
+            height: 9px;
+          }
+        }
       }
 
       .slick-active {

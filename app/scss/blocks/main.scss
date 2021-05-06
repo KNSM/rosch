@@ -1,5 +1,5 @@
 .main {
-  padding: 10px 0 130px;
+  margin: 10px 0 130px;
 
   &-wrapper {
     display: flex;
@@ -29,5 +29,15 @@
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  @media (max-width: $bpTablet) {
+    margin: 10px 0 70px;
+  }
+  @media (max-width: $bpMobile) {
+    margin: 0 0 50px;
+  }
+  @media (max-width: $bpPhone) {
+    margin: 0 0 30px;
   }
 }
