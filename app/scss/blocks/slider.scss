@@ -2,7 +2,6 @@
   position: relative;
 
   &.slider-teachers {
-    padding-bottom: 45px;
 
     .slider {
       &__wrapper {
@@ -190,6 +189,7 @@
           border: none;
           outline: none;
           padding: 0;
+          cursor: pointer;
 
           @media (max-width: $bpMobile) {
             width: 9px;

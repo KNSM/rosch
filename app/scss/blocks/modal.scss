@@ -1,0 +1,41 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% - 10px));
+  transition: .2s;
+  z-index: 19;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden auto;
+  max-height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  max-width: calc(100% - 5px);
+
+  &__wrapper {
+    padding: 30px;
+
+    @media (max-width: $bpTablet) {
+      padding: 25px;
+    }
+
+    @media (max-width: $bpMobile) {
+      padding: 20px;
+    }
+
+    @media (max-width: $bpPhone) {
+      padding: 15px;
+    }
+  }
+
+  &.-window-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%);
+  }
+
+  &#modal-give-review {
+    width: 356px;
+  }
+}

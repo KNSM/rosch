@@ -59,6 +59,83 @@ $(document).ready(function () {
         }
     });
 
+    //modal
+    $(function () {
+        var modal = $('.modal'),
+            modalClose = modal.find('modal__close');
+            link = $('[data-window]');
+
+        link.click(function () {
+            if ($('#' + $(this).data('window')).length) {
+                ov.addClass('-window-active');
+                $('#' + $(this).data('window')).addClass('-window-active');
+            }
+        });
+
+        modalClose.click(function () {
+            $('.-window-active').removeClass('-window-active');
+        });
+    });
+
+    //list-tags-close script
+    $(function () {
+        var list = $('.list-tags-close');
+
+        list.each(function () {
+            var currentList = $(this),
+                listItem = currentList.find('.list__item'),
+                listItemClose = listItem.find('.icon-close');
+
+            listItemClose.click(function () {
+                $(this).parent().addClass('-removed');
+                $(this).parent().remove();
+
+                if (listItem.not('.-removed').length === 0) {
+                    currentList.hide();
+                }
+            });
+        });
+    });
+
+    //form give review
+    $(function () {
+        var form = $('.form.form-give-review');
+
+        form.each(function () {
+            var currentForm = $(this),
+                fieldStarItem = currentForm.find('.field-star-count');
+
+            fieldStarItem.each(function () {
+                var currentItem = $(this),
+                    currentItemData = $(this).data('field'),
+                    listItem = $(this).find('.list-rating-stars .list__item');
+
+                for (var i = 0; i < listItem.length; i++) {
+                    $(listItem[i]).mouseover(function () {
+                        var listItemActive = listItem.slice(0, ($(this).index() + 1));
+                        if (!listItemActive.find('.icon').hasClass('-active-clicked')) {
+                            listItemActive.find('.icon').addClass('-active');
+                        }
+                    });
+                    $(listItem[i]).mouseout(function () {
+                        var listItemActive = listItem.slice(0, ($(this).index() + 1));
+                        if (!listItemActive.find('.icon').hasClass('-active-clicked')) {
+                            listItemActive.find('.icon').removeClass('-active');
+                        }
+                    });
+
+                    $(listItem[i]).click(function () {
+                        var listItemActive = listItem.slice(0, ($(this).index() + 1)),
+                            listItemDisactive = listItem.slice(($(this).index() + 1), i);
+
+                        listItemActive.find('.icon').addClass('-active -active-clicked');
+                        listItemDisactive.find('.icon').removeClass('-active -active-clicked');
+                    });
+                }
+            })
+        });
+    });
+
     //header control menu opener
     $(function () {
         var headerMenu = $('.header__user-control .item-menu'),
@@ -69,6 +146,7 @@ $(document).ready(function () {
                 headerMenu.removeClass('-window-active');
             } else {
                 $('.-window-active').removeClass('-window-active');
+                $('.header__menu').removeClass('-active');
                 headerMenu.addClass('-window-active');
             }
         });
@@ -83,15 +161,19 @@ $(document).ready(function () {
             htmlBody = $('html, body');
 
         headerMenu.click(function () {
+            $('.header__user-control .item-menu').removeClass('-window-active');
+
             if ($(this).hasClass('-active')) {
                 htmlBody.css('overflow-y', 'auto');
+                $(this).removeClass('-active');
+                headerNav.removeClass('-window-active');
+                ov.removeClass('-window-active');
             } else {
                 htmlBody.css('overflow-y', 'hidden');
+                $(this).addClass('-active');
+                headerNav.addClass('-window-active');
+                ov.addClass('-window-active');
             }
-
-            $(this).toggleClass('-active');
-            headerNav.toggleClass('-window-active');
-            ov.toggleClass('-window-active');
         });
 
         headerNavItemArrow.click(function () {
@@ -453,7 +535,7 @@ $(document).ready(function () {
         if (tableWrapper != null) {
 
             tableWrapper.each(function () {
-                var tableButton = $(this).parent().find('.table__button .link'),
+                var tableButton = $(this).parents('.section__table-wrapper').find('.table__button .link'),
                     currentWrapper = $(this),
                     tableItem = $(this).find('tr');
 

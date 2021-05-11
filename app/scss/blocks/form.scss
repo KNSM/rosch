@@ -1,5 +1,139 @@
 .form {
 
+  &.form-give-review {
+    .form__item {
+
+      &:after {
+        content: '';
+        display: table;
+        clear: both;
+      }
+
+      &.item-title, &.item-stars-rating {
+        margin-bottom: 18px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        @media (max-width: $bpPhone) {
+          margin-bottom: 12px;
+        }
+      }
+
+      &.item-selector, &.item-tags {
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &.item-button {
+        margin-top: 25px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        @media (max-width: $bpPhone) {
+          margin-top: 18px;
+        }
+      }
+
+      &.item-stars-rating {
+
+        .input__field {
+          margin-bottom: 12px;
+
+          &-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 -5px -5px;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .label, .list {
+            margin: 0 5px 5px;
+          }
+
+          .label {
+            color: #7E8493;
+
+            @media (min-width: $bpMobile + 1) and ($bpTablet) {
+              width: 100%;
+            }
+
+            @media (max-width: 380px) {
+              width: 100%;
+            }
+          }
+        }
+
+        .list-rating-stars {
+
+          .list__item {
+
+            .icon {
+              color: #EBEBFD;
+              font-size: 18px;
+              cursor: pointer;
+
+              &.-active {
+                color: $starYellowColor;
+              }
+
+              @media (max-width: $bpMobile) {
+                font-size: 16px;
+              }
+
+              @media (max-width: $bpPhone) {
+                font-size: 14px;
+              }
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      &.item-textarea {
+        .input-textarea-blue {
+          height: 125px;
+        }
+      }
+
+      &.item-button {
+        .link {
+          width: 100%;
+        }
+      }
+    }
+
+    .form {
+
+      &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .text {
+          font-size: 18px;
+        }
+
+        .date {
+          color: #7E8493;
+        }
+      }
+    }
+  }
+
   &.form-services {
 
     &:last-child {

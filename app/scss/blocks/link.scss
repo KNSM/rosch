@@ -1,5 +1,7 @@
 .link {
   cursor: pointer;
+  outline: none;
+  border: none;
   transition: .2s;
 
   &.link-promo {
@@ -100,6 +102,11 @@
     box-shadow: $primaryBoxShadow;
     border-radius: 10px;
     color: #fff;
+    height: 42px;
+
+    &:hover {
+      background: #176DDC;
+    }
   }
   
   &.link-text-primary {

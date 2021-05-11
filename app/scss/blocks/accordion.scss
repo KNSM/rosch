@@ -40,6 +40,13 @@
             }
           }
         }
+
+        @media (max-width: $bpMobile) {
+          padding: 16px 25px;
+        }
+        @media (max-width: $bpPhone) {
+          padding: 13px 20px;
+        }
       }
 
       &__header {

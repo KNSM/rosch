@@ -1,0 +1,61 @@
+.mobile-block {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  @media (min-width: $bpTablet + 1) {
+    display: none;
+  }
+
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -15px -15px;
+  }
+
+  &__item {
+    margin: 0 15px 15px;
+    flex: 1 1 auto;
+
+    .title {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .text {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+
+    &.item-adv {
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 300px;
+
+      .image {
+        width: 100%;
+      }
+    }
+
+    &.item-quiz {
+      width: 100%;
+      max-width: 360px;
+    }
+  }
+}

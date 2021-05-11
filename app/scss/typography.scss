@@ -42,14 +42,41 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: 30px;
+
+  @media (max-width: $bpTablet) {
+    font-size: 26px;
+  }
+  @media (max-width: $bpMobile) {
+    font-size: 23px;
+  }
+  @media (max-width: $bpPhone) {
+    font-size: 20px;
+  }
 }
 
 h3, .h3 {
   font-size: 26px;
+
+  @media (max-width: $bpTablet) {
+    font-size: 24px;
+  }
+  @media (max-width: $bpPhone) {
+    font-size: 22px;
+  }
+  @media (max-width: $bpPhone) {
+    font-size: 18px;
+  }
 }
 
 h4, .h4 {
   font-size: 19px;
+
+  @media (max-width: $bpMobile) {
+    font-size: 16px;
+  }
+  @media (max-width: $bpPhone) {
+    font-size: 14px;
+  }
 }
 
 h5, .h5 {
