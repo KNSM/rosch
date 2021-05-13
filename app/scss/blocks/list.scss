@@ -1,5 +1,24 @@
 .list {
 
+  &.list-checked {
+    display: inline-flex;
+    margin: 0 -30px -15px;
+
+    .list__item {
+      margin: 0 30px 15px;
+      display: flex;
+      align-items: center;
+
+      &:before {
+        content: '\e904';
+        font-family: 'icomoon';
+        font-size: 10px;
+        color: $primaryColor;
+        margin-right: 15px;
+      }
+    }
+  }
+
   &.list-big-count-display {
     display: flex;
     margin: 0 -8px -16px;
@@ -120,10 +139,73 @@
     }
   }
 
-  &.list-text-count {
+  &.list-text-count-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
     .list__item {
       margin-bottom: 13px;
-      display: flex;
+      display: grid;
+      grid-template-rows: 1fr;
+
+      &.-align-center {
+        align-items: center;
+      }
+
+      &.-align-end {
+        align-items: flex-end;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .text {
+        color: #7E8493;
+
+        b {
+          font-weight: 500;
+        }
+      }
+
+      &.date-info {
+        margin-bottom: 24px;
+      }
+
+      .date {
+        .date-count {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 1;
+        }
+      }
+
+      .count {
+        font-weight: 600;
+      }
+
+      .icon {
+        font-size: 10px;
+
+        &.icon-close {
+          color: #8294A1;
+        }
+
+        &.icon-check {
+          color: #44CB5A;
+        }
+      }
+    }
+  }
+
+  &.list-count-text-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .list__item {
+      margin-bottom: 13px;
+      display: grid;
+      grid-template-rows: 1fr;
 
       &:last-child {
         margin-bottom: 0;
@@ -132,12 +214,10 @@
       .text {
         color: #7E8493;
         flex: 1 1 auto;
-        padding-right: 10px;
       }
 
       .count {
         font-weight: 600;
-        width: 45px;
       }
 
       .icon {
@@ -240,6 +320,28 @@
     }
   }
 
+  &.list-control-tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 0 -5px -8px;
+
+    .list__item {
+      margin: 0 5px 8px;
+
+      .text {
+        background: #FFFFFF;
+        box-shadow: 0 15px 20px rgba(218, 218, 241, 0.25);
+        border-radius: 8px;
+        padding: 10px 25px;
+        min-width: 121px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 42px;
+      }
+    }
+  }
+
   &.list-quiz {
     .list__item {
       margin-bottom: 7px;
@@ -250,6 +352,13 @@
       background: #F5FAFF;
       border-radius: 5px;
       cursor: pointer;
+      border: 1px #F5FAFF solid;
+      transition: .2s;
+
+      &:not(.-disabled):hover {
+        border: 1px $primaryColor solid;
+        background: #FFFEFD;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -273,13 +382,13 @@
         background: rgba(68, 203, 90, 0.1);
 
         .text {
-          color: #44CB5A;
+          color: $greenColor;
         }
 
         .icon {
           &:before {
             content: '\e904';
-            color: #44CB5A;
+            color: $greenColor;
           }
         }
       }
@@ -288,11 +397,11 @@
         background: rgba(255, 42, 62, 0.05);
 
         .text {
-          color: #FF5464;
+          color: $redColor;
         }
 
         .icon {
-          color: #FF5464;
+          color: $redColor;
           &:before {
             content: '\e905';
           }
@@ -313,10 +422,12 @@
 
       .icon {
         font-size: 14px;
-        color: $starYellowColor;
+        color: #EBEBFD;
+      }
 
-        &.-gray {
-          color: #EBEBFD;
+      &.-active {
+        .icon {
+          color: $starYellowColor;
         }
       }
     }

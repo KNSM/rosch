@@ -1,6 +1,68 @@
 .slider {
   position: relative;
 
+  &.slider-images {
+
+    .slider {
+      &__image {
+        position: relative;
+        padding-top: 43%;
+        border-radius: 8px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      &__caption {
+        margin-top: 20px;
+        text-align: center;
+
+        .text {
+          color: #7E8493;
+          font-style: italic;
+        }
+      }
+    }
+
+    .slick-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px auto -10px;
+      max-width: calc(100% + 30px);
+
+      li {
+        margin: 0 15px 10px;
+        flex: 0 0 auto;
+
+        button {
+          font-size: 0;
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          background: #dcecff;
+          display: block;
+          border: none;
+          outline: none;
+          padding: 0;
+          cursor: pointer;
+
+          @media (max-width: $bpMobile) {
+            width: 9px;
+            height: 9px;
+          }
+        }
+      }
+
+      .slick-active {
+        button {
+          background: $primaryColor;
+        }
+      }
+    }
+  }
+
   &.slider-teachers {
 
     .slider {
@@ -209,6 +271,7 @@
   &.slider-nav {
     display: flex;
     align-items: center;
+    overflow: hidden;
 
     .slider-menu {
       margin-right: 15px;

@@ -1,5 +1,5 @@
 .main {
-  margin: 10px 0 130px;
+  margin-bottom: 130px;
 
   &-wrapper {
     display: flex;
@@ -32,7 +32,7 @@
   }
 
   @media (max-width: $bpTablet) {
-    margin: 10px 0 70px;
+    margin-bottom: 70px;
   }
   @media (max-width: $bpMobile) {
     margin: 0 0 50px;

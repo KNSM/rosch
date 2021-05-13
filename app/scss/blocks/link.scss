@@ -4,6 +4,22 @@
   border: none;
   transition: .2s;
 
+  &.link-text-white {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    margin: 0 -4px;
+
+    .text, .icon {
+      margin: 0 4px;
+      transition: .2s;
+    }
+
+    .icon {
+      font-size: 10px;
+    }
+  }
+
   &.link-promo {
     display: inline-flex;
     background: #22293C;
@@ -86,6 +102,7 @@
     border: 1px $primaryColor solid;
     border-radius: 6px;
     min-height: 50px;
+    background: transparent;
 
     &:hover {
       background: $primaryColor;
@@ -111,6 +128,20 @@
   
   &.link-text-primary {
     color: $primaryColor;
+    display: inline-flex;
+    align-items: center;
+
+    .text {
+      margin: 0 5px;
+    }
+
+    .icon {
+      font-size: 10px;
+      transition: .2s;
+      color: $primaryColor;
+      line-height: 1;
+      margin: 0 5px;
+    }
     
     &:hover {
       color: $primaryColorHover;

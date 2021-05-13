@@ -29,7 +29,7 @@ $(document).ready(function () {
                             breakpoint: 480,
                             settings: {
                                 slidesToShow: 1,
-                                arrows:false,
+                                arrows: false,
                             }
                         }
                     ]
@@ -38,7 +38,7 @@ $(document).ready(function () {
 
             if (currentSlider.length && currentSlider.hasClass('slider-nav')) {
                 sliderWrapper.slick({
-                    infinite: false,
+                    infinite: true,
                     slidesToScroll: 1,
                     dots: false,
                     arrows: false,
@@ -46,6 +46,18 @@ $(document).ready(function () {
                     slidesToShow: 1,
                     variableWidth: true,
                     swipeToSlide: true
+                });
+            }
+
+            if (currentSlider.length && currentSlider.hasClass('slider-images')) {
+                sliderWrapper.slick({
+                    infinite: true,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: false,
+                    slidesToShow: 1,
+                    fade: true,
+                    cssEase: 'linear'
                 });
             }
         });
@@ -63,7 +75,7 @@ $(document).ready(function () {
     $(function () {
         var modal = $('.modal'),
             modalClose = modal.find('modal__close');
-            link = $('[data-window]');
+        link = $('[data-window]');
 
         link.click(function () {
             if ($('#' + $(this).data('window')).length) {
@@ -75,6 +87,45 @@ $(document).ready(function () {
         modalClose.click(function () {
             $('.-window-active').removeClass('-window-active');
         });
+    });
+
+    //box-checkbox-count
+    $(function () {
+        var box = $('.box-checkbox-count-white');
+
+        if (box.length) {
+            box.each(function () {
+                var checkbox = $(this).find('.input-checkbox'),
+                    number = $(this).find('.input-number');
+
+                $(this).click(function () {
+                    if (checkbox.prop("checked")) {
+                        number.prop('disabled', false);
+                        number.focus();
+                    } else {
+                        number.prop('disabled', true);
+                    }
+                });
+            });
+        }
+    });
+
+    //form-inner-search
+    $(function () {
+        var form = $('.form.form-inner-search');
+
+        if (form.length) {
+            form.each(function () {
+                var currentForm = $(this),
+                    openButton = currentForm.find('.field-open-button .link'),
+                    formFilter = currentForm.find('.item-filter');
+
+                openButton.click(function () {
+                    $(this).parents('.form__item-wrapper').toggleClass('-opened');
+                    formFilter.slideToggle();
+                });
+            });
+        }
     });
 
     //list-tags-close script
@@ -273,6 +324,8 @@ $(document).ready(function () {
         if (quiz != null) {
             quiz.each(function () {
                 var items = $(this).find('.list__item'),
+                    captionWin = $(this).parents('.quiz__content').find('.item-win'),
+                    captionLose = $(this).parents('.quiz__content').find('.item-lose'),
                     itemTrue;
 
                 if (quiz.hasClass('quiz-sidebar')) {
@@ -286,6 +339,10 @@ $(document).ready(function () {
 
                         if ($(this).data('item') === itemTrue) {
                             $(this).addClass('item-true');
+
+                            if (captionWin.length) {
+                                captionWin.fadeIn();
+                            }
                         } else {
                             $(this).addClass('item-false');
 
@@ -293,6 +350,10 @@ $(document).ready(function () {
                                 if ($(items[i]).data('item') === itemTrue) {
                                     $(items[i]).addClass('item-true');
                                 }
+                            }
+
+                            if (captionLose.length) {
+                                captionLose.fadeIn();
                             }
                         }
                     }
@@ -307,10 +368,12 @@ $(document).ready(function () {
 
         selector.each(function () {
 
-            var select = $(this).find('.select'),
+            var currentSelector = $(this),
+                select = $(this).find('.select'),
                 selectorMenu = $(this).find('.selector-menu'),
                 selectorMenuInner = selectorMenu.find('.menu'),
-                selectItems = select.find('option');
+                selectItems = select.find('option'),
+                selectItemCaptionText = select.find('option.caption').html();
 
             $(this).append('<div class="selector-block"><button type="button" class="button"></button></div>');
             select.wrap('<div class="form-data"></div>');
@@ -321,19 +384,30 @@ $(document).ready(function () {
 
             selectItems.each(function () {
 
-                if ($(this).attr('selected')) {
+                if ($(this).attr('selected') && !$(this).hasClass('caption')) {
                     selectorMenuInner.append('<li data-id="' + $(this).attr('value') + '" class="selector-menu__item selected">' + $(this).html() + '</li>');
 
                     var selectorMenuItem = selectorMenuInner.find('.selector-menu__item.selected');
 
                     selectorButton.html($(this).html());
                     selectorButton.attr('data-id', selectorMenuItem.attr('data-id'));
-                } else {
+                } else if ($(this).attr('selected') && $(this).hasClass('caption')) {
+                    var selectorMenuItem = selectorMenuInner.find('.selector-menu__item.selected');
+
+                    selectorButton.html($(this).html());
+                    selectorButton.attr('data-id', selectorMenuItem.attr('data-id'));
+                } else if (!$(this).hasClass('caption')) {
                     selectorMenuInner.append('<li data-id="' + $(this).attr('value') + '" class="selector-menu__item">' + $(this).html() + '</li>');
                 }
             });
 
             var selectorMenuItem = selectorMenuInner.find('.selector-menu__item');
+
+            $(document).mouseup(function (e) {
+                if (!currentSelector.is(e.target) && currentSelector.has(e.target).length === 0 && selectorMenu.hasClass('-open')) {
+                    selectorMenu.removeClass('-open');
+                }
+            });
 
             selectorButton.click(function () {
                 var menuLength = selectorMenuInner.find('.selector-menu__item').length;
@@ -351,19 +425,101 @@ $(document).ready(function () {
 
                 selectItems.removeAttr('selected');
 
-                selectItems.each(function () {
-                    if ($(this)[0].value === dataId) {
-                        $(this).attr('selected', 'selected');
-                    }
-                });
-                selectItems.find('[value]', dataId);
-                selectorButton.html(selectorText);
-                selectorButton.attr('data-id', dataId);
-                selectorMenuItem.removeClass('selected');
-                $(this).addClass('selected');
-                selectorMenu.removeClass('-open');
+                if ($(this).hasClass('selected') && selectItemCaptionText.length) {
+                    selectorMenuItem.removeClass('selected');
+                    selectorButton.html(selectItemCaptionText);
+                    selectorMenu.removeClass('-open');
+                    selectItems.each(function () {
+                        if ($(this).hasClass('caption')) {
+                            $(this).attr('selected', 'selected');
+                        }
+                    });
+                } else {
+                    selectItems.each(function () {
+                        if ($(this)[0].value === dataId) {
+                            $(this).attr('selected', 'selected');
+                        }
+                    });
+                    selectItems.find('[value]', dataId);
+                    selectorButton.html(selectorText);
+                    selectorButton.attr('data-id', dataId);
+                    selectorMenuItem.removeClass('selected');
+                    $(this).addClass('selected');
+                    selectorMenu.removeClass('-open');
+                }
             });
         });
+    });
+
+    //form-assessment
+    $(function () {
+        var form = $('.form.form-assessment');
+
+        if (form.length) {
+            form.each(function () {
+                var currentForm = $(this),
+                    selector = currentForm.find('.selector'),
+                    inputWrapper = currentForm.find('.input__field-wrapper'),
+                    inputField = inputWrapper.children('.input__field'),
+                    inputFieldClone = inputField.clone(),
+                    addSelectorButton = currentForm.find('.form__button .link');
+
+                selector.each(function () {
+                    var currentSelector = $(this),
+                        selectorOption = currentSelector.find('.select option'),
+                        inputNumber = currentSelector.parent().find('.input[type=number]'),
+                        selectorMenu = currentSelector.find('.selector-menu .menu');
+
+                    selectorMenu.on('click', '.selector-menu__item', function () {
+                        var currentMenuItem = $(this);
+
+                        selectorOption.each(function () {
+                            if (($(this).attr('selected') === 'selected') && !$(this).hasClass('caption')) {
+                                $(inputNumber[0]).removeAttr('disabled');
+                                $(inputNumber[0]).focus();
+                            } else if (($(this).attr('selected') === 'selected')) {
+                                $(inputNumber[0]).attr('disabled', 'disabled');
+                            }
+                        });
+                    })
+                });
+
+                addSelectorButton.click(function () {
+
+                    var inputField = inputWrapper.children('.input__field');
+
+                    console.log(inputField.length);
+                    if (inputField.length < 3) {
+                        inputWrapper.append(inputFieldClone.clone());
+                    } else if (inputField.length === 3) {
+                        inputWrapper.append(inputFieldClone.clone());
+                        addSelectorButton.html('Убрать один пункт');
+                    } else if (inputField.length === 4) {
+
+                    }
+                });
+            });
+        }
+    });
+
+    //table-catalog-count
+    $(function () {
+        var table = $('.table-catalog-count');
+
+        if (table.length) {
+            table.each(function () {
+                var tableItems = $(this).find('tbody tr'),
+                    tableBody = $(this).find('tbody'),
+                    tableOpenButton = $(this).find('thead .col-name .link');
+
+                tableOpenButton.find('.count').html(tableItems.length);
+
+                tableOpenButton.click(function () {
+                    $(this).toggleClass('-active');
+                    tableBody.fadeToggle();
+                });
+            });
+        }
     });
 
     //main catalog
@@ -406,6 +562,61 @@ $(document).ready(function () {
                             $(hiddenItems[i]).addClass('-opened');
                         }
                     } else if (hiddenItems.length <= 4 && hiddenItems.length > 0) {
+                        for (i = 0; i < hiddenItems.length; i++) {
+                            $(hiddenItems[i]).fadeIn();
+                            $(hiddenItems[i]).addClass('-opened');
+                            $(this).text('Скрыть');
+                        }
+                    } else if (hiddenItems.length === 0) {
+                        items.fadeOut();
+                        items.removeClass('-opened');
+                        $(this).text('Показать еще');
+                    }
+                });
+            });
+        }
+    });
+
+    //catalog detail item
+    $(function () {
+        var catalogWrapper = $('.catalog-detail-item .catalog__wrapper');
+
+        if (catalogWrapper != null) {
+
+            catalogWrapper.each(function () {
+                var catalogButton = $(this).parent().find('.catalog__button .link'),
+                    currentWrapper = $(this),
+                    catalogItem = $(this).find('.catalog__item');
+
+                if (catalogItem.length > 2) {
+                    catalogButton.parent().show();
+                }
+
+                for (var i = 0; i < catalogItem.length; i++) {
+                    if (i > 1) {
+                        $(catalogItem[i]).addClass('-hidden-item');
+                    } else {
+                        $(catalogItem[i]).show();
+                    }
+                }
+
+                catalogButton.click(function () {
+
+                    var items = currentWrapper.find('.-hidden-item'),
+                        hiddenItems = [];
+
+                    for (var i = 0; i < items.length; i++) {
+                        if (!$(items[i]).hasClass('-opened')) {
+                            hiddenItems.push(items[i]);
+                        }
+                    }
+
+                    if (hiddenItems.length > 2) {
+                        for (i = 0; i < 2; i++) {
+                            $(hiddenItems[i]).fadeIn();
+                            $(hiddenItems[i]).addClass('-opened');
+                        }
+                    } else if (hiddenItems.length <= 2 && hiddenItems.length > 0) {
                         for (i = 0; i < hiddenItems.length; i++) {
                             $(hiddenItems[i]).fadeIn();
                             $(hiddenItems[i]).addClass('-opened');

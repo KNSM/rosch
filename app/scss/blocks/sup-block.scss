@@ -1,8 +1,10 @@
 .sup-block {
   position: relative;
   margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
 
-  &:before {
+  &:after {
     content: '\e90d';
     font-family: 'icomoon';
     color: #87BDF9;
@@ -10,8 +12,12 @@
     cursor: pointer;
   }
 
+  .link {
+    margin-right: 10px;
+  }
+
   &.-gray {
-    &:before {
+    &:after {
       color: #C0C9D0;
     }
   }
@@ -25,7 +31,8 @@
     top: 0;
     transform: translate(-50%, -100%);
     border-radius: 5px;
-    width: 245px;
+    max-width: 245px;
+    width: max-content;
     background: #fff;
     padding: 10px;
     border: 1px rgba($primaryColor, .4) solid;

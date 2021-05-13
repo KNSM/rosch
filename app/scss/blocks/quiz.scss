@@ -41,5 +41,50 @@
         font-weight: 700;
       }
     }
+
+    &__caption {
+
+      .item {
+        margin-top: 20px;
+        text-align: center;
+        display: none;
+      }
+
+      .count {
+        font-weight: 700;
+        display: block;
+      }
+
+      .text {
+        margin-top: 10px;
+        display: block;
+        color: $grayColor;
+        font-weight: 300;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      .link {
+        margin-top: 16px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      .item-win {
+        .count {
+          color: $greenColor;
+        }
+      }
+
+      .item-lose {
+        .count {
+          color: $redColor;
+        }
+      }
+    }
   }
 }

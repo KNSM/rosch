@@ -161,6 +161,7 @@
     &-wrapper {
       display: flex;
       flex-direction: column;
+      height: 100%;
 
       @media (max-width: $bpTablet) {
         flex-direction: row;
