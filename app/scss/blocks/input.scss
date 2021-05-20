@@ -30,7 +30,6 @@
     }
 
     &:disabled {
-      background: #2786EE;
       color: #6EB1FB;
     }
   }
@@ -52,6 +51,16 @@
 
   &.input-textarea-blue {
     background: #EBF4FE;
+    border-radius: 8px;
+    resize: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 20px;
+  }
+
+  &.input-textarea-white {
+    background: #fff;
     border-radius: 8px;
     resize: none;
     border: none;

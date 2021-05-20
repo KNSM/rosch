@@ -23,7 +23,7 @@
     }
     @media (max-width: $bpTablet) {
       margin: 0 0 10px;
-      order: 1;
+      order: 2;
     }
 
     &:last-child {
@@ -39,5 +39,14 @@
   }
   @media (max-width: $bpPhone) {
     margin: 0 0 30px;
+  }
+}
+
+.type-main {
+
+  @media (max-width: $bpMobile) {
+    .main-title {
+      margin-top: 18px;
+    }
   }
 }

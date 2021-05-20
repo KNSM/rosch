@@ -54,6 +54,14 @@
       border-right: 1px rgba($primaryColor, .4) solid;
       background: #fff;
     }
+
+    @media (max-width: $bpPhone) {
+      left: auto;
+      right: 0;
+      transform: translate(0, -100%);
+      max-width: 260px;
+      width: max-content;
+    }
   }
 
   &:hover {
@@ -61,6 +69,18 @@
       opacity: 1;
       visibility: visible;
       transform: translate(-50%, calc(-100% - 8px));
+
+      @media (max-width: $bpPhone) {
+        left: auto;
+        right: 0;
+        transform: translate(0, calc(-100% - 8px));
+
+        &:before {
+          left: auto;
+          right: 0;
+          transform: translate(-5px, 50%) rotate(45deg);
+        }
+      }
     }
   }
 }

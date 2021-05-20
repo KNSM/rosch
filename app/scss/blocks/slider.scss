@@ -91,6 +91,10 @@
           @media (max-width: $bpMobile) {
             padding: 20px;
           }
+
+          @media (max-width: $bpPhone) {
+            padding: 12px;
+          }
         }
 
         .item {
@@ -111,6 +115,9 @@
 
               @media (max-width: $bpMobile) {
                 max-width: 160px;
+              }
+              @media (max-width: $bpPhone) {
+                max-width: 88px;
               }
             }
 
@@ -135,6 +142,12 @@
 
             .text {
               font-size: 18px;
+            }
+
+            @media (max-width: $bpPhone) {
+              .text {
+                font-size: 16px;
+              }
             }
           }
 
@@ -170,6 +183,14 @@
             .count {
               font-size: 24px;
               font-weight: 600;
+            }
+
+            @media (max-width: $bpPhone) {
+              font-size: 13px;
+
+              .count {
+                font-size: 14px;
+              }
             }
           }
         }
@@ -257,6 +278,10 @@
             width: 9px;
             height: 9px;
           }
+        }
+
+        @media (max-width: $bpPhone) {
+          margin: 0 10px 10px;
         }
       }
 

@@ -1,20 +1,85 @@
 .form {
 
+  &.form-answer-review {
+
+    .input__field {
+      margin-top: 20px;
+      position: relative;
+      padding-bottom: 20px;
+      background: #EBF4FE;
+      border-radius: 8px;
+
+      .answer-count {
+        position: absolute;
+        left: 15px;
+        bottom: 10px;
+        display: flex;
+        align-items: center;
+        color: $primaryColor;
+
+        .text {
+          line-height: 1;
+          font-size: 13px;
+        }
+
+        .icon {
+          margin-right: 7px;
+          font-size: 12px;
+        }
+      }
+
+      .input-textarea-blue, .input-textarea-white {
+        padding: 15px;
+        height: 100px;
+      }
+    }
+
+    .form__button {
+      margin-top: 10px;
+
+      .link {
+        font-size: 13px;
+        height: 36px;
+      }
+    }
+  }
+
   &.form-assessment {
     background: #3D95F5;
     border-radius: 8px;
     padding: 30px 40px;
 
+    @media (max-width: $bpMobile) {
+      padding: 25px;
+    }
+    @media (max-width: $bpPhone) {
+      padding: 20px;
+    }
+
     .form__wrapper {
       display: flex;
       margin: 0 -10px -20px;
+
+      @media (max-width: $bpMobile) {
+        flex-wrap: wrap;
+        margin: 0;
+      }
     }
 
     .form__item {
       margin: 0 10px 20px;
 
+      @media (max-width: $bpMobile) {
+        margin: 0 0 15px;
+      }
+
       &.item-data {
         flex: 0 0 auto;
+
+        @media (max-width: $bpMobile) {
+          margin: 0 auto 15px;
+          flex: 0 1 auto;
+        }
       }
 
       &.item-result {
@@ -23,6 +88,10 @@
         justify-content: center;
         align-items: center;
         display: flex;
+
+        @media (max-width: $bpMobile) {
+          width: 100%;
+        }
       }
 
       .input__field-wrapper {
@@ -39,6 +108,14 @@
         .link {
           width: 100%;
         }
+
+        @media (max-width: 414px) {
+          width: 100%;
+
+          .link {
+            padding: 0 10px;
+          }
+        }
       }
 
       .input__field {
@@ -46,22 +123,56 @@
         display: flex;
         align-items: center;
 
+        @media (max-width: 414px) {
+          flex-wrap: wrap;
+        }
+
+        &.-hidden-item {
+          display: none;
+        }
+
         .selector, .caption, .input {
           margin: 0 4px;
         }
 
         .selector {
           width: 240px;
+
+          @media (max-width: 414px) {
+            width: 100%;
+            margin-bottom: 10px;
+          }
         }
 
         .input-number-white {
           width: 70px;
+
+          &::placeholder {
+            opacity: 0;
+          }
+
+          @media (max-width: 414px) {
+            width: 100%;
+            text-align: left;
+            padding: 0 20px;
+
+            &::placeholder {
+              opacity: 1;
+              text-align: left;
+              color: $defaultColor;
+              font-size: 13px;
+            }
+          }
         }
 
         .caption {
           color: #fff;
           font-size: 13px;
           font-weight: 500;
+
+          @media (max-width: $bpPhone) {
+            display: none;
+          }
         }
       }
       
@@ -85,53 +196,30 @@
 
   &.form-inner-search {
 
-    .form__item-wrapper {
+    .form__wrapper {
 
-      .form__item {
-        margin-bottom: 10px;
+      .form__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        margin-bottom: 16px;
 
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-
-      .input__field {
-        margin: 0 5px 10px;
-
-        &-wrapper {
-          margin: 0 -5px -10px;
-          display: flex;
-          align-items: center;
-          flex-wrap: wrap;
+        .text, .icon {
+          color: #fff;
         }
 
-        &.field-search {
-          width: 100%;
-          display: flex;
+        .text {
+          font-size: 13px;
+          font-weight: 500;
+        }
 
-          .input {
-            transition: .2s;
-            width: calc(100% - 130px);
-          }
+        .icon {
+            font-size: 22px;
+        }
 
-          .link {
-            margin-left: 10px;
-            width: 120px;
-          }
-
-          @media (max-width: $bpPhone) {
-            flex-wrap: wrap;
-
-            .input {
-              width: calc(100%);
-              margin-bottom: 10px;
-            }
-
-            .link {
-              width: 100%;
-              margin-left: 0;
-            }
-          }
+        @media (min-width: $bpPhone + 1) {
+          display: none;
         }
       }
 
@@ -243,6 +331,12 @@
 
         @media (max-width: $bpPhone) {
           padding: 15px 15px 20px;
+
+          .item-button {
+            .input__field.field-button {
+              width: 100%;
+            }
+          }
         }
       }
 
@@ -314,6 +408,57 @@
         }
       }
     }
+
+    .form__item-wrapper {
+
+      .form__item {
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .input__field {
+        margin: 0 5px 10px;
+
+        &-wrapper {
+          margin: 0 -5px -10px;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+
+        &.field-search {
+          width: 100%;
+          display: flex;
+
+          .input {
+            transition: .2s;
+            width: calc(100% - 130px);
+          }
+
+          .link {
+            margin-left: 10px;
+            width: 120px;
+          }
+
+          @media (max-width: $bpPhone) {
+            flex-wrap: wrap;
+
+            .input {
+              width: calc(100%);
+              margin-bottom: 10px;
+            }
+
+            .link {
+              width: 100%;
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
   }
 
   &.form-give-review {
@@ -337,11 +482,21 @@
         }
       }
 
-      &.item-selector, &.item-tags {
+      &.item-selector {
         margin-bottom: 12px;
 
         &:last-child {
           margin-bottom: 0;
+        }
+      }
+
+      &.item-tags {
+        .list-tags-close {
+          margin-bottom: 0;
+
+          .list__item {
+            margin-bottom: 12px;
+          }
         }
       }
 
@@ -574,6 +729,10 @@
 
       .icon {
         font-size: 22px;
+
+        @media (max-width: $bpPhone) {
+          font-size: 18px;
+        }
       }
     }
 
@@ -588,6 +747,12 @@
 
       &:last-child {
         margin-bottom: 0;
+      }
+
+      &.item-selector {
+        .input__field-wrapper {
+          flex-wrap: wrap;
+        }
       }
 
       @media (max-width: 620px) {

@@ -124,6 +124,54 @@
     &:hover {
       background: #176DDC;
     }
+
+    .text-block {
+      display: flex;
+      margin: 0 -5px;
+      align-items: center;
+
+      .text {
+        margin: 0 5px;
+      }
+      .icon {
+        margin: 0 5px;
+      }
+    }
+
+    @media (max-width: $bpPhone) {
+      box-shadow: 0 5px 10px rgba(61, 150, 251, 0.2);
+    }
+  }
+
+  &.link-white {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    height: 42px;
+    background: #FFFFFF;
+    box-shadow: 0 15px 20px rgba(218, 218, 241, 0.25);
+    border-radius: 8px;
+
+    &:hover {
+      background: $primaryColor;
+      color: #fff;
+    }
+
+    .text-block {
+      display: flex;
+      margin: 0 -5px;
+      align-items: center;
+
+      .text {
+        line-height: 1;
+        margin: 0 5px;
+      }
+      .icon {
+        color: #8294A1;
+        margin: 0 5px;
+      }
+    }
   }
   
   &.link-text-primary {
@@ -131,8 +179,19 @@
     display: inline-flex;
     align-items: center;
 
-    .text {
-      margin: 0 5px;
+
+    .text-block {
+      margin: 0 -5px;
+      display: inline-flex;
+      align-items: center;
+      flex-direction: row;
+
+      .text {
+        margin: 0 5px;
+      }
+      .icon {
+        margin: 0 5px;
+      }
     }
 
     .icon {
@@ -140,7 +199,6 @@
       transition: .2s;
       color: $primaryColor;
       line-height: 1;
-      margin: 0 5px;
     }
     
     &:hover {

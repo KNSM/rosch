@@ -177,7 +177,6 @@
 
             &.icon-user-circle {
               font-size: 20px;
-              color: $primaryColor;
               display: none;
             }
 
@@ -192,8 +191,10 @@
             }
           }
 
-          &:hover {
-            color: $primaryColor;
+          @media (min-width: $bpPhone + 1) {
+            &:hover {
+              color: $primaryColor;
+            }
           }
         }
 
@@ -271,6 +272,11 @@
           }
 
           @media (max-width: 560px) {
+            .open-icon {
+              .icon-user-circle {
+                color: $primaryColor;
+              }
+            }
             .list {
               transform: translateX(0);
             }
@@ -393,7 +399,7 @@
           transition: .2s;
         }
 
-        &:hover {
+        &:hover, &.-active {
           background: $primaryColor;
           color: #fff;
 
@@ -587,7 +593,7 @@
     }
 
     @media (max-width: 560px) {
-      height: calc(100vh - 60px);
+      height: calc(100vh - 62px);
     }
   }
 }

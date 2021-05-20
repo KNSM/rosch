@@ -30,6 +30,7 @@
   "dependencies": {
     "gulp-uglify": "^3.0.2",
     "normalize.css": "^8.0.1",
-    "npm": "^6.0.0"
+    "npm": "^6.0.0",
+    "numeralize-ru": "^1.0.1"
   }
 }

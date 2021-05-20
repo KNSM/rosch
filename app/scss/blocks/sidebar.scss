@@ -8,7 +8,7 @@
   }
 
   @media (max-width: $bpTablet) {
-    margin: 0 -25px 30px;
+    margin: 0 -25px;
     width: calc(100% + 50px);
     padding: 30px 25px;
     order: 0;
@@ -17,11 +17,7 @@
 
   @media (max-width: $bpMobile) {
     padding: 15px 25px;
-    margin: 0 -25px 20px;
-  }
-
-  @media (max-width: $bpPhone) {
-    padding: 15px 25px;
+    margin: 0 -25px;
   }
 
   &__item {

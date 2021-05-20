@@ -3,6 +3,14 @@
   &.table-info {
     width: 100%;
 
+    .mobile-title {
+      margin-right: 30px;
+
+      @media (min-width: $bpPhone + 1) {
+        display: none;
+      }
+    }
+
     tbody {
       border-top: 2px $primaryColor solid;
       
@@ -17,17 +25,8 @@
 
     tr {
       &:nth-child(2n) {
-        td {
-          background: #F5FAFF;
-
-          &:first-child {
-            border-radius: 8px 0 0 8px;
-          }
-
-          &:last-child {
-            border-radius: 0 8px 8px 0;
-          }
-        }
+        background: #F5FAFF;
+        border-radius: 8px;
       }
     }
 
@@ -92,22 +91,22 @@
   &.table-catalog-count {
     width: 100%;
     margin: 0 -5px;
-    min-width: 430px;
+
+    tr {
+      display: flex;
+
+      @media (max-width: $bpMobile) {
+        flex-wrap: wrap;
+        padding: 5px 0;
+      }
+    }
 
     thead {
       .col {
         padding: 10px 5px;
 
-        .mobile-title {
-          display: block;
-
-          @media (min-width: $bpLaptop +1) {
-            display: none;
-          }
-
-          margin-bottom: 5px;
-          font-size: 11px;
-          color: $grayColor;
+        @media (max-width: $bpPhone) {
+          padding: 5px;
         }
 
         &.col-learning-price {
@@ -117,7 +116,19 @@
         }
 
         &.col-name {
+          .text-block {
+            margin: 0 -5px;
+            width: calc(100% + 10px);
+          }
+          .text {
+            white-space: nowrap;
+          }
           .link {
+            .text-block {
+              flex-direction: row;
+              justify-content: flex-start;
+              margin: 0;
+            }
             &.-active {
               .icon {
                 transform: rotate(180deg);
@@ -127,6 +138,7 @@
         }
       }
     }
+
     tbody {
       border-top: 1px solid #3D96FB;
       display: none;
@@ -134,14 +146,14 @@
       tr {
         border-bottom: 1px solid #E3ECF3;
       }
-
-      .col {
-        vertical-align: middle;
-      }
     }
 
     .col {
       padding: 15px 5px;
+
+      @media (max-width: $bpPhone) {
+        padding: 5px;
+      }
 
       &.col-name {
         width: 40%;
@@ -172,7 +184,7 @@
 
       &.col-learning-price {
         width: 20%;
-        max-width: 140px;
+        min-width: 140px;
 
         .text {
           white-space: nowrap;
@@ -184,6 +196,98 @@
         }
       }
 
+      .text-block {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .mobile-title {
+          display: block;
+
+          @media (min-width: $bpLaptop +1) {
+            display: none;
+          }
+
+          margin-bottom: 5px;
+          font-size: 11px;
+          color: $grayColor;
+
+          @media (max-width: $bpPhone) {
+            margin-bottom: 0;
+          }
+        }
+
+        @media (max-width: $bpPhone) {
+          margin: 0 -5px;
+
+          .mobile-title, .text {
+            margin: 0 5px;
+          }
+        }
+      }
+
+
+      &:not(.col-name) {
+        .text-block {
+          @media (max-width: $bpPhone) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: calc(100% + 10px);
+          }
+
+          .text {
+            @media (min-width: $bpPhone + 1) and (max-width: $bpMobile) {
+              flex: 1 1 auto;
+            }
+          }
+        }
+      }
+
+      &:not(.col-name) {
+        .text-block {
+          @media (min-width: $bpMobile + 1) {
+            .mobile-title {
+              flex: 1 1 auto;
+            }
+          }
+        }
+      }
+
+      @media (max-width: $bpMobile) {
+        &.col-name, &.col-passing-score, &.col-budget-places, &.col-learning-price {
+          width: 50%;
+          max-width: 50%;
+        }
+      }
+
+      @media (max-width: $bpPhone) {
+        &.col-name, &.col-passing-score, &.col-budget-places, &.col-learning-price {
+          width: 100%;
+          max-width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .text {
+            font-size: 13px;
+
+            .count {
+              font-size: 14px;
+            }
+          }
+        }
+
+        &.col-name {
+          .text-block {
+            width: 100%;
+            .text, .count {
+              width: 100%;
+            }
+          }
+        }
+      }
     }
   }
 }

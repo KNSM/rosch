@@ -1,6 +1,22 @@
 $(document).ready(function () {
     var ov = $('.ov');
 
+    //Склонение падежей
+    function declOfNum(n, text_forms) {
+        n = Math.abs(n) % 100;
+        var n1 = n % 10;
+        if (n > 10 && n < 20) {
+            return text_forms[2];
+        }
+        if (n1 > 1 && n1 < 5) {
+            return text_forms[1];
+        }
+        if (n1 === 1) {
+            return text_forms[0];
+        }
+        return text_forms[2];
+    }
+
     //sliders
     $(function () {
         var slider = $('.slider');
@@ -121,8 +137,40 @@ $(document).ready(function () {
                     formFilter = currentForm.find('.item-filter');
 
                 openButton.click(function () {
-                    $(this).parents('.form__item-wrapper').toggleClass('-opened');
+                    $(this).parents('.form__wrapper').toggleClass('-opened');
                     formFilter.slideToggle();
+                });
+            });
+        }
+    });
+
+    //list-tags
+    $(function () {
+        var list = $('.list-tags');
+
+        if (list.length) {
+            list.each(function () {
+                var currentList = $(this),
+                    listMore = currentList.find('.item-more'),
+                    listItems = currentList.find('.list__item'),
+                    maxCount = 5;
+
+                for (var i = 0; i < listItems.length; i++) {
+                    if ($(listItems[i]).index() >= maxCount && !$(listItems[i]).hasClass('item-more')) {
+                        $(listItems[i]).addClass('-hidden-item');
+                    }
+                }
+
+                listMore.click(function () {
+                    if ($(this).hasClass('-opened')) {
+                        $(this).removeClass('-opened');
+                        $(this).parent().find('.-hidden-item').css('display', 'none');
+                        $(this).find('.text').text('Еще')
+                    } else {
+                        $(this).addClass('-opened');
+                        $(this).parent().find('.-hidden-item').css('display', 'flex');
+                        $(this).find('.text').text('Скрыть')
+                    }
                 });
             });
         }
@@ -134,16 +182,22 @@ $(document).ready(function () {
 
         list.each(function () {
             var currentList = $(this),
-                listItem = currentList.find('.list__item'),
-                listItemClose = listItem.find('.icon-close');
+                listItem = currentList.find('.list__item');
 
-            listItemClose.click(function () {
+            $(this).on('click', '.list__item .icon-close', function () {
                 $(this).parent().addClass('-removed');
-                $(this).parent().remove();
 
-                if (listItem.not('.-removed').length === 0) {
-                    currentList.hide();
+                if ($(this).parents('.list-tags-close').find('.list__item').not('.item-clear').length === 1) {
+                    $(this).parents('.list-tags-close').find('.list__item').remove();
+                } else {
+                    $(this).parent().remove();
                 }
+
+
+            });
+
+            $(this).on('click', '.list__item.item-clear', function () {
+                $(this).parents('.list-tags-close').find('.list__item').remove();
             });
         });
     });
@@ -154,7 +208,9 @@ $(document).ready(function () {
 
         form.each(function () {
             var currentForm = $(this),
-                fieldStarItem = currentForm.find('.field-star-count');
+                fieldStarItem = currentForm.find('.field-star-count'),
+                selector = currentForm.find('.selector'),
+                tagList = currentForm.find('.item-tags .list-tags-close');
 
             fieldStarItem.each(function () {
                 var currentItem = $(this),
@@ -183,7 +239,27 @@ $(document).ready(function () {
                         listItemDisactive.find('.icon').removeClass('-active -active-clicked');
                     });
                 }
-            })
+            });
+
+            selector.on('click', '.selector-menu__item', function () {
+                var menuItemText = $(this).html(),
+                    menuItemId = $(this).data('id');
+
+                if (!$(this).hasClass('-added')) {
+                    $(this).addClass('-added');
+                    tagList.append('<li class="list__item" data-id="' + menuItemId + '"><span class="text">' + menuItemText + '</span><i class="icon icon-close"></i></li>')
+                }
+            });
+
+            tagList.on('click', '.list__item .icon-close', function () {
+                var removedId = $(this).parent().data('id');
+
+                selector.find('.selector-menu__item').each(function () {
+                    if ($(this).data('id') === removedId) {
+                        $(this).removeClass('-added');
+                    }
+                });
+            });
         });
     });
 
@@ -460,7 +536,7 @@ $(document).ready(function () {
                 var currentForm = $(this),
                     selector = currentForm.find('.selector'),
                     inputWrapper = currentForm.find('.input__field-wrapper'),
-                    inputField = inputWrapper.children('.input__field'),
+                    inputField = inputWrapper.find('.input__field'),
                     inputFieldClone = inputField.clone(),
                     addSelectorButton = currentForm.find('.form__button .link');
 
@@ -469,6 +545,12 @@ $(document).ready(function () {
                         selectorOption = currentSelector.find('.select option'),
                         inputNumber = currentSelector.parent().find('.input[type=number]'),
                         selectorMenu = currentSelector.find('.selector-menu .menu');
+
+                    for (var i = 0; i < inputField.length; i++) {
+                        if (i > 0) {
+                            $(inputField[i]).addClass('-hidden-item');
+                        }
+                    }
 
                     selectorMenu.on('click', '.selector-menu__item', function () {
                         var currentMenuItem = $(this);
@@ -484,18 +566,19 @@ $(document).ready(function () {
                     })
                 });
 
+                var countFields = 1;
+
                 addSelectorButton.click(function () {
+                    if (countFields < inputField.length - 1) {
+                        $(inputField[countFields]).removeClass('-hidden-item');
+                        $(inputField[countFields]).show();
 
-                    var inputField = inputWrapper.children('.input__field');
-
-                    console.log(inputField.length);
-                    if (inputField.length < 3) {
-                        inputWrapper.append(inputFieldClone.clone());
-                    } else if (inputField.length === 3) {
-                        inputWrapper.append(inputFieldClone.clone());
-                        addSelectorButton.html('Убрать один пункт');
-                    } else if (inputField.length === 4) {
-
+                        countFields = countFields + 1;
+                    } else if (countFields === inputField.length - 1) {
+                        $(inputField[countFields]).removeClass('-hidden-item');
+                        $(inputField[countFields]).show();
+                        addSelectorButton.prop('disabled', true);
+                        addSelectorButton.html('Максимум 5 предметов');
                     }
                 });
             });
@@ -512,7 +595,7 @@ $(document).ready(function () {
                     tableBody = $(this).find('tbody'),
                     tableOpenButton = $(this).find('thead .col-name .link');
 
-                tableOpenButton.find('.count').html(tableItems.length);
+                tableOpenButton.find('.text').html(tableItems.length + ' ' + declOfNum(tableItems.length, ['факультет', 'факультета', 'факультетов']));
 
                 tableOpenButton.click(function () {
                     $(this).toggleClass('-active');
@@ -531,7 +614,8 @@ $(document).ready(function () {
             catalogWrapper.each(function () {
                 var catalogButton = $(this).parent().find('.catalog__button .link'),
                     currentWrapper = $(this),
-                    catalogItem = $(this).find('.catalog__item');
+                    catalogItem = $(this).find('.catalog__item'),
+                    mobileOpenButton = $(this).find('.item__mobile-button .link');
 
                 if (catalogItem.length > 4) {
                     catalogButton.parent().show();
@@ -571,6 +655,30 @@ $(document).ready(function () {
                         items.fadeOut();
                         items.removeClass('-opened');
                         $(this).text('Показать еще');
+                    }
+                });
+
+                mobileOpenButton.click(function () {
+                    var list = $(this).parents('.col-content').find('.item__list'),
+                        text = $(this).parents('.col-content').find('.item__text');
+                    if ($(this).hasClass('-opened')) {
+                        $(this).removeClass('-opened');
+                        $(this).find('.text').html('Развернуть');
+                        if (list.length) {
+                            list.slideUp();
+                        }
+                        if (text.length) {
+                            text.slideUp();
+                        }
+                    } else {
+                        $(this).addClass('-opened');
+                        $(this).find('.text').html('Свернуть');
+                        if (list.length) {
+                            list.slideDown();
+                        }
+                        if (text.length) {
+                            text.slideDown();
+                        }
                     }
                 });
             });
@@ -630,6 +738,57 @@ $(document).ready(function () {
                 });
             });
         }
+    });
+
+    //catalog detail olympiads
+    function catalogDetailOlympiads() {
+        var catalog = $('.catalog.catalog-detail-olympiads'),
+            catalogItem = catalog.find('.catalog__item');
+
+        catalogItem.each(function () {
+            var list = $(this).find('.list-text-count-grid'),
+                listItems = list.find('.list__item'),
+                openButton = $(this).find('.item__mobile-button .link-text-primary');
+
+            if ($(window).width() < 481) {
+                if (listItems.length > 2) {
+                    openButton.show();
+                }
+
+                for (var i = 0; i < listItems.length; i++) {
+                    if (i > 1) {
+                        $(listItems[i]).addClass('-hidden');
+                    } else {
+                        $(listItems[i]).css('display', 'grid');
+                    }
+                }
+
+                openButton.click(function () {
+
+                    var button = $(this),
+                        items = list.find('.-hidden');
+
+                    if (button.hasClass('-open')) {
+                        console.log(2);
+                        items.hide();
+                        button.removeClass('-open');
+                        button.find('.text').html('Развернуть');
+                    } else {
+                        console.log(1);
+                        items.css('display', 'grid');
+                        button.addClass('-open');
+                        button.find('.text').html('Скрыть');
+                    }
+                });
+            } else {
+                openButton.hide();
+            }
+        });
+    }
+
+    catalogDetailOlympiads()
+    $(window).on('resize', function () {
+        catalogDetailOlympiads()
     });
 
     //main catalog form mobile script
@@ -696,6 +855,8 @@ $(document).ready(function () {
                     currentWrapper = $(this),
                     catalogItem = $(this).find('.catalog__item');
 
+                $(this).parent().find('.catalog__title .count').html(catalogItem.length);
+
                 if (catalogItem.length > 2) {
                     catalogButton.parent().show();
                 }
@@ -734,6 +895,32 @@ $(document).ready(function () {
                         items.removeClass('-opened');
                         $(this).text('Показать еще');
                     }
+                });
+
+                catalogItem.each(function () {
+                    var catalogItemWrapper = $(this).find('.catalog__item-wrapper');
+
+                    catalogItemWrapper.each(function () {
+                        var answerButtonOpen = $(this).find('.button-opener'),
+                            answerForm = $(this).find('.item__form-answer'),
+                            itemName = $(this).find('.item__name .text').text(),
+                            itemNameAnswer = answerForm.find('.answer-count .count');
+
+                        itemNameAnswer.text(itemName);
+
+                        answerButtonOpen.click(function () {
+                            var answerFormText = $(this).find('.text');
+                            if ($(this).hasClass('-opened')) {
+                                $(this).removeClass('-opened');
+                                answerForm.fadeOut();
+                                answerFormText.html('Ответить');
+                            } else {
+                                $(this).addClass('-opened');
+                                answerForm.fadeIn();
+                                answerFormText.html('Скрыть');
+                            }
+                        });
+                    });
                 });
             });
         }
@@ -820,5 +1007,59 @@ $(document).ready(function () {
 
     $('.back-to-top').click(function () {
         $('html,body').animate({scrollTop: 0}, 1100);
+    });
+
+    // anchor link
+    $(function () {
+        var anchorLink = $("a.anchor-link[href^='#']");
+        anchorLink.click(function () {
+            var elementClick = $(this).attr("href");
+            if ($(elementClick).length) {
+                var destination = $(elementClick).offset().top;
+
+                $('html,body').animate({scrollTop: destination - 80}, 1100);
+
+                return false;
+            }
+        });
+    });
+
+    // input number ege
+    $(function () {
+        var input = $('.input-number-ege'),
+            count = 0,
+            maxlimit = 3,
+            maxvalue = 100;
+
+        input.keyup(function () {
+            if ($(this)[0].value.length > maxlimit) {
+                $(this)[0].value = $(this)[0].value.substring(0, maxlimit);
+                if (Number($(this)[0].value) > maxvalue) {
+                    $(this)[0].value = $(this)[0].value.substring(0, maxlimit - 1);
+                }
+            } else if (Number($(this)[0].value) > maxvalue) {
+                $(this)[0].value = $(this)[0].value.substring(0, maxlimit - 1);
+            } else {
+                count = $(this)[0].value.length;
+            }
+        });
+    });
+
+    //grade item
+    $(function () {
+        var item = $('.grade__item');
+
+        if (item.length) {
+            item.each(function () {
+                $(this).find('.icon').click(function () {
+                    if ($(this).parent().hasClass('-active')) {
+                        $(this).parent().removeClass('-active');
+                    } else {
+                        $(this).parent().parent().find('.grade__item').removeClass('-active');
+                        $(this).parent().addClass('-active');
+                    }
+                });
+            });
+        }
     });
 });
