@@ -23,7 +23,6 @@
         &.item-info {
           width: 277px;
           flex: 0 0 auto;
-          padding-top: 10px;
 
           @media (min-width: $bpTablet + 1) and (max-width: $bpLaptop) {
             width: 100%;

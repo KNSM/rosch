@@ -10,10 +10,10 @@ html, body {
 
 main {
   position: relative;
-  min-height: calc(100vh - 100px);
+  min-height: calc(75vh - 100px);
 
   @media (max-width: 1440px) {
-    min-height: calc(100vh - 168px);
+    min-height: calc(75vh - 168px);
   }
 }
 

@@ -16,6 +16,7 @@
 
         .link {
           width: 100%;
+          height: 50px;
         }
       }
 
@@ -239,24 +240,21 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 0;
             background: #FFFFFF;
+            padding: 20px 0;
             box-shadow: 0 15px 20px rgba(218, 218, 241, 0.25);
             border-radius: 8px;
             order: 0;
-
-            .image {
-              max-width: 210px;
-              width: 100%;
-            }
+            height: 110px;
 
             &:last-child {
               margin-bottom: 0;
             }
 
             .image {
-              width: 124px;
-              max-width: 100%;
+              width: 100%;
+              max-width: 124px;
+              max-height: 100%;
             }
 
             @media (max-width: $bpMobile) {
@@ -343,6 +341,42 @@
           }
 
           &__price {
+            order: 4;
+
+            .count {
+              font-size: 24px;
+              font-weight: 600;
+            }
+
+            @media (max-width: $bpTablet) {
+              .count {
+                font-size: 20px;
+              }
+            }
+
+            @media (max-width: $bpMobile) {
+              .count {
+                font-size: 18px;
+              }
+            }
+
+            @media (max-width: 660px) {
+              order: 3;
+              width: 103px;
+            }
+
+            @media (max-width: $bpPhone) {
+              width: calc(50% - 10px);
+              font-size: 13px;
+              text-align: right;
+
+              .count {
+                font-size: 14px;
+              }
+            }
+          }
+
+          &__date {
             order: 4;
 
             .count {

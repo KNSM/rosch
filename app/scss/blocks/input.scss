@@ -13,7 +13,7 @@
       color: #22293C;
     }
   }
-  
+
   &.input-number-white {
     height: 42px;
     text-align: center;
@@ -50,7 +50,7 @@
   }
 
   &.input-textarea-blue {
-    background: #EBF4FE;
+    background: #F5FAFF;
     border-radius: 8px;
     resize: none;
     border: none;
@@ -211,7 +211,6 @@
     }
 
     &.box-checkbox-white {
-      flex: 1 1 auto;
       padding-right: 10px;
       display: flex;
       align-items: center;
@@ -320,6 +319,49 @@
           color: $primaryColor;
           display: none;
         }
+      }
+    }
+  }
+
+  &-wrapper {
+
+    &.-password {
+      position: relative;
+
+      .input {
+        padding: 0 20px 0 55px;
+      }
+
+      .icon {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        font-size: 18px;
+        cursor: pointer;
+        display: none;
+
+        &.icon-no-eye {
+          color: #C0C9D0;
+        }
+
+        &.icon-eye {
+          color: $primaryColor;
+        }
+      }
+    }
+
+    &.-with-mark {
+      position: relative;
+
+      &:before {
+       content: '\e924';
+        position: absolute;
+        color: $primaryColor;
+        font-size: 10px;
+        top: 0;
+        right: 20px;
+        font-family: 'icomoon';
       }
     }
   }

@@ -73,4 +73,68 @@
       }
     }
   }
+
+  &.accordion-results {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .accordion {
+
+      &__item {
+        margin-bottom: 10px;
+        background: #FFFFFF;
+        border-radius: 8px;
+        padding: 20px 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &.-active {
+          .accordion__header {
+            .icon {
+              transform: rotate(180deg);
+            }
+
+            .text {
+              color: $primaryColor;
+            }
+          }
+        }
+
+        @media (max-width: $bpMobile) {
+          padding: 16px 25px;
+        }
+        @media (max-width: $bpPhone) {
+          padding: 13px 20px;
+        }
+      }
+
+      &__header {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 8px;
+
+        .icon {
+          margin-right: 18px;
+          font-size: 10px;
+          color: $primaryColor;
+          transition: .2s;
+        }
+
+        .text {
+          transition: .2s;
+          font-weight: 700;
+        }
+      }
+
+      &__inner {
+        padding-left: 28px;
+      }
+    }
+  }
 }

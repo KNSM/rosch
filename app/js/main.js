@@ -926,6 +926,20 @@ $(document).ready(function () {
         }
     });
 
+    //comments catalog
+    $(function () {
+        var catalogWrapper = $('.catalog-comments .catalog__wrapper');
+
+        if (catalogWrapper != null) {
+
+            catalogWrapper.each(function () {
+                var catalogItemWrapper = $(this).find('.catalog__item-wrapper');
+
+                $(this).parent().find('.catalog__title .count').html(catalogItemWrapper.length);
+            });
+        }
+    });
+
     //services detail table
     $(function () {
         var tableWrapper = $('.section__table-search .section__table-wrapper .table-info');
