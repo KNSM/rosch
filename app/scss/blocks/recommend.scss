@@ -178,6 +178,12 @@
         }
       }
     }
+
+    &.account-special {
+      .recommend__item {
+        width: calc(33.3333% - 30px);
+      }
+    }
   }
 
   &.recommend-same {

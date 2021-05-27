@@ -55,33 +55,6 @@
       }
     }
 
-    .section__table-search & {
-      margin-bottom: 25px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      td {
-        font-weight: 700;
-
-        .count {
-          color: $primaryColor;
-        }
-      }
-
-      tr {
-        display: none;
-        &:nth-child(2n) {
-          td {
-            &:first-child {
-              color: $primaryColor;
-            }
-          }
-        }
-      }
-    }
-
     &.table-max-width {
       th, td {
         padding: 15px;
