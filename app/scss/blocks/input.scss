@@ -1,4 +1,7 @@
 .input {
+  font-family: $baseFont;
+  font-size: inherit;
+  max-width: 100%;
 
   &.input-white {
     height: 42px;
@@ -334,21 +337,31 @@
         padding: 0 20px 0 55px;
       }
 
-      .icon {
+      .password-control {
         position: absolute;
         top: 50%;
         left: 20px;
         transform: translateY(-50%);
         font-size: 18px;
         cursor: pointer;
-        display: none;
 
-        &.icon-no-eye {
+        &:before {
+          content: '\e925';
+          font-family: 'icomoon';
           color: #C0C9D0;
         }
 
-        &.icon-eye {
-          color: $primaryColor;
+        &.-active {
+          &:before {
+            content: '\e923';
+            color: $primaryColor;
+          }
+        }
+      }
+
+      &.-focused {
+        .password-control {
+          display: block;
         }
       }
     }

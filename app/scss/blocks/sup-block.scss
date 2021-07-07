@@ -54,32 +54,51 @@
       border-right: 1px rgba($primaryColor, .4) solid;
       background: #fff;
     }
+  }
 
-    @media (max-width: $bpPhone) {
-      left: auto;
-      right: 0;
-      transform: translate(0, -100%);
-      max-width: 260px;
-      width: max-content;
+  @media(min-width: $bpPhone + 1) {
+    &:hover {
+      .sup-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, calc(-100% - 8px));
+
+        @media (max-width: $bpPhone) {
+          left: auto;
+          right: 0;
+          transform: translate(0, calc(-100% - 8px));
+
+          &:before {
+            left: auto;
+            right: 0;
+            transform: translate(-5px, 50%) rotate(45deg);
+          }
+        }
+      }
     }
   }
 
-  &:hover {
+
+  @media (max-width: $bpPhone) {
     .sup-modal {
-      opacity: 1;
-      visibility: visible;
-      transform: translate(-50%, calc(-100% - 8px));
+      &:before {
+        display: none;
+      }
 
-      @media (max-width: $bpPhone) {
-        left: auto;
-        right: 0;
-        transform: translate(0, calc(-100% - 8px));
+      text-align: center;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, calc(-50% - 10px));
+      width: calc(100% - 50px);
+    }
 
-        &:before {
-          left: auto;
-          right: 0;
-          transform: translate(-5px, 50%) rotate(45deg);
-        }
+    &.-window-active {
+      .sup-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -50%);
+        z-index: 5;
       }
     }
   }

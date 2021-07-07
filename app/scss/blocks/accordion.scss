@@ -137,4 +137,54 @@
       }
     }
   }
+
+  &.accordion-lessons-score {
+
+    .accordion__header {
+      display: inline-flex;
+
+      .lesson-wrapper {
+        display: flex;
+        align-items: center;
+        margin: 0 -7px;
+
+        .text, .icon {
+          margin: 0 7px;
+          cursor: pointer;
+        }
+
+        .icon {
+          font-size: 20px;
+        }
+
+        .icon-arrow-down {
+          font-size: 10px;
+          color: #8294A2;
+          transition: .2s;
+        }
+      }
+    }
+
+    .accordion__item {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.-active {
+        .accordion__header {
+          .lesson-wrapper {
+            .icon-arrow-down {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+
+    .accordion__inner {
+      margin-top: 30px;
+    }
+  }
 }

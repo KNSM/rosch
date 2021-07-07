@@ -47,10 +47,34 @@
         height: 157px;
       }
     }
+
+    .form__button {
+      @media (max-width: $bpPhone) {
+        width: 100%;
+
+        .link {
+          width: 100%;
+        }
+      }
+    }
   }
 
   &.form-user {
     margin-bottom: 26px;
+    max-width: 410px;
+    width: 100%;
+
+    &.-full {
+      max-width: 100%;
+
+      .form__item {
+        &.item-input {
+          .input__field {
+            justify-content: flex-start;
+          }
+        }
+      }
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -64,104 +88,81 @@
         &:last-child {
           margin-bottom: 0;
         }
-      }
-      &.item-button {
-        margin-bottom: 25px;
 
-        &:last-child {
-          margin-bottom: 0;
+        .input__field {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 12px;
+
+          @media (max-width: $bpPhone) {
+            flex-wrap: wrap;
+          }
+
+          &.field-textarea {
+            align-items: flex-start;
+
+            .label {
+              margin-top: 10px;
+            }
+
+            .input {
+              height: 115px;
+            }
+          }
+
+          .label {
+            width: 126px;
+
+            @media (max-width: 550px) {
+              width: 100px;
+            }
+
+            @media (max-width: $bpPhone) {
+              width: 100%;
+              margin-bottom: 10px;
+            }
+          }
+
+          .input-wrapper {
+            width: 260px;
+            flex: 0 0 auto;
+
+            &.-full {
+              width: calc(100% - 136px);
+            }
+
+            @media (max-width: 550px) {
+              width: calc(100% - 100px);
+              &.-full {
+                width: calc(100% - 100px);
+              }
+            }
+
+            @media (max-width: $bpPhone) {
+              width: 100%;
+              &.-full {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .label {
+          color: $grayColor;
+          font-size: 13px;
         }
       }
+
       &.item-media {
         margin-bottom: 20px;
 
         &:last-child {
           margin-bottom: 0;
         }
-      }
 
-      .input__field {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-
-        &.field-textarea {
-          align-items: flex-start;
-
-          .label {
-            margin-top: 5px;
-          }
-
-          .input {
-            height: 115px;
-          }
-        }
-
-        .label {
-          color: $grayColor;
-          width: 132px;
-
-          @media (max-width: 414px) {
-            margin-bottom: 10px;
-          }
-        }
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        .input-wrapper {
-          width: 260px;
-
-          &.-full {
-            width: calc(100% - 132px);
-          }
-        }
-
-        .selector {
-          width: 260px;
-          max-width: 100%;
-
-          &.-full {
-            width: calc(100% - 132px);
-          }
-        }
-
-        @media (max-width: 414px) {
-          flex-wrap: wrap;
-
-          .label {
-            max-width: 100%;
-          }
-
-          .input-wrapper {
-            width: 100%;
-          }
-
-          .selector {
-            width: 100%;
-          }
-        }
-      }
-
-      .form__button {
-        display: flex;
-        justify-content: flex-end;
-
-        .link {
-          width: 260px;
-
-          &.-full {
-            width: calc(100% - 132px);
-          }
-        }
-
-        @media (max-width: 414px) {
-          flex-wrap: wrap;
-
-          .link {
-            width: 100%;
-          }
+        @media (max-width: $bpPhone) {
+          margin-bottom: 15px;
         }
       }
 
@@ -171,9 +172,9 @@
         align-items: center;
 
         .media-text {
-          width: 132px;
           .text {
             color: $grayColor;
+            font-size: 13px;
           }
 
           @media (max-width: 414px) {
@@ -188,11 +189,22 @@
           &.-full {
             width: calc(100% - 132px);
           }
+
+          @media (max-width: 550px) {
+            width: calc(100% - 100px);
+          }
+          @media (max-width: $bpPhone) {
+            width: 100%;
+          }
         }
 
 
-        @media (max-width: 414px) {
+        @media (max-width: $bpPhone) {
           flex-wrap: wrap;
+
+          .media-text {
+            margin-bottom: 8px;
+          }
 
           .media-list {
             width: 100%;
@@ -202,18 +214,58 @@
 
       .forgot-password-text {
         margin-left: auto;
-        width: calc(100% - 132px);
+        width: 260px;
 
-        @media (max-width: 414px) {
+        @media (max-width: 550px) {
+          width: calc(100% - 100px);
+        }
+        @media (max-width: $bpPhone) {
           width: 100%;
         }
       }
     }
 
     .form__button {
-      .link {
-        width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 25px;
+
+      @media (max-width: $bpPhone) {
+        margin-bottom: 15px;
       }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .link {
+        width: 260px;
+        flex: 0 0 auto;
+
+        &.-full {
+          width: calc(100% - 132px);
+        }
+
+        @media (max-width: 550px) {
+          width: calc(100% - 100px);
+        }
+        @media (max-width: $bpPhone) {
+          width: 100%;
+        }
+      }
+
+      &.-full {
+        width: 100%;
+
+        .link {
+          width: 100%;
+        }
+      }
+    }
+
+    &.form-password-recovery {
+      max-width: 400px;
+      width: 100%;
     }
   }
 
@@ -309,6 +361,10 @@
         @media (max-width: $bpMobile) {
           width: 100%;
         }
+
+        @media (max-width: $bpPhone) {
+          padding: 0;
+        }
       }
 
       .input__field-wrapper {
@@ -392,7 +448,7 @@
           }
         }
       }
-      
+
       .result-text {
         text-align: center;
         color: #fff;
@@ -432,7 +488,7 @@
         }
 
         .icon {
-            font-size: 22px;
+          font-size: 22px;
         }
 
         @media (min-width: $bpPhone + 1) {
@@ -841,10 +897,18 @@
 
       &__item {
         flex: 1 1 auto;
+        max-width: calc(100% - 16px);
       }
 
       &__button {
         flex: 0 0 auto;
+
+        .link {
+          .mobile-text {
+            margin-left: 7px;
+            display: none;
+          }
+        }
 
         @media (max-width: $bpMobile) {
           width: calc(25% - 12px);
@@ -855,6 +919,12 @@
 
         @media (max-width: $bpPhone) {
           width: calc(100% - 12px);
+
+          .link {
+            .mobile-text {
+              display: block;
+            }
+          }
         }
       }
 
@@ -1011,6 +1081,7 @@
 
         &.field-button {
           width: auto;
+          text-align: right;
 
           .link {
             width: 117px;
@@ -1048,6 +1119,176 @@
 
           }
         }
+      }
+    }
+
+    &.form-catalog-special {
+      .input__field-wrapper {
+        .input__field {
+          width: calc(25% - 10px);
+
+          @media (max-width: $bpMobile) {
+            width: calc(50% - 10px);
+          }
+
+          @media (max-width: $bpPhone) {
+            width: calc(100% - 10px);
+          }
+        }
+      }
+
+      .form__item {
+        &.item-button {
+          text-align: right;
+
+          .link {
+            width: 117px;
+
+            @media (max-width: $bpPhone) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.form-mailing {
+    margin-bottom: 20px;
+    padding: 25px 35px;
+    background: #fff;
+    border-radius: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .form__item-wrapper {
+      margin: 0 -25px -20px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .form__item {
+      margin: 0 25px 20px;
+      width: calc(50% - 50px);
+
+      .form__title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .icon {
+          font-size: 20px;
+          color: $primaryColor;
+          margin-right: 12px;
+        }
+
+        .text {
+          font-size: 18px;
+        }
+      }
+
+      .form__input {
+        margin-bottom: 10px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .input__field-wrapper {
+        display: flex;
+        align-items: center;
+        margin: 0 -10px -10px;
+      }
+
+      .input__field {
+        margin: 0 10px 10px;
+        flex: 1 1 auto;
+      }
+
+      .form__button {
+        margin: 0 10px 10px;
+        flex: 1 1 auto;
+
+        .link {
+          width: 100%;
+        }
+      }
+
+      .input__box {
+        margin: 0 10px 10px;
+        padding-right: 0;
+      }
+
+      @media (max-width: $bpMobile) {
+        width: calc(100% - 50px);
+      }
+
+      @media (max-width: $bpPhone) {
+        .input__field-wrapper {
+          flex-wrap: wrap;
+
+          .input__field {
+            width: calc(100% - 20px);
+          }
+
+          .form__button {
+            width: calc(100% - 20px);
+          }
+        }
+      }
+    }
+  }
+
+  &.form-calling {
+    width: 192px;
+    max-width: 100%;
+    margin: 0 auto;
+
+    .input__field {
+      margin-bottom: 12px;
+    }
+
+    .form__button {
+      width: 100%;
+
+      .link {
+        width: 100%;
+      }
+    }
+  }
+
+  &.form-new-comment {
+    .form__title {
+      margin-bottom: 12px;
+
+      .text {
+        font-size: 18px;
+      }
+    }
+
+    .input__field {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .input-textarea-blue {
+        background: #EBF4FE;
+        height: 125px;
+      }
+    }
+
+    .form__button {
+      .link {
+        width: 195px;
       }
     }
   }

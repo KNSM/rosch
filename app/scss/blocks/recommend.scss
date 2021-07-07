@@ -148,6 +148,10 @@
             flex-direction: column;
             z-index: 1;
             color: #fff;
+
+            @media (max-width: $bpPhone) {
+              padding: 20px;
+            }
           }
 
           &__discount {
@@ -173,6 +177,10 @@
               font-size: 15px;
               line-height: 1.6;
               font-weight: 700;
+
+              @media (max-width: $bpPhone) {
+                font-size: 14px;
+              }
             }
           }
         }
@@ -180,8 +188,30 @@
     }
 
     &.account-special {
+
       .recommend__item {
         width: calc(33.3333% - 30px);
+      }
+
+      @media (max-width: $bpTablet) {
+       padding: 0;
+
+        .recommend__wrapper {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (max-width: $bpMobile) {
+        .recommend__item {
+          width: calc(50% - 30px);
+        }
+      }
+
+      @media (max-width: $bpPhone) {
+        .recommend__item {
+          width: calc(100% - 30px);
+        }
       }
     }
   }
@@ -265,6 +295,7 @@
 
             @media (max-width: $bpMobile) {
               padding: 25px 0;
+              height: 80px;
             }
 
             @media (max-width: $bpPhone) {
@@ -341,7 +372,9 @@
 
             .list-text-count-grid {
               .list__item {
-                grid-template-columns: auto 45px;
+                .text-grid {
+                  grid-template-columns: auto 45px;
+                }
               }
             }
           }

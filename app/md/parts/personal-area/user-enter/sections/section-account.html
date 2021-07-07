@@ -2,40 +2,39 @@
     <div class="section__wrapper">
         <form action="#" class="form form-user">
             <div class="section__title">
-                <h1 class="h1">
-                    Вход
-                </h1>
-                <a href="javascript:;" class="link link-text-primary">
-                    <b>
-                        Регистрация
-                    </b>
-                </a>
+                <div class="section__title-wrapper">
+                    <h1 class="h1">
+                        Вход
+                    </h1>
+                    <a href="javascript:;" class="link link-text-primary">
+                        <b>
+                            Регистрация
+                        </b>
+                    </a>
+                </div>
             </div>
 
             <div class="form__item item-input">
                 <div class="input__field-wrapper">
                     <div class="input__field">
-                        <label for="#" class="label">Email</label>
+                        <label for="user-enter-email" class="label">Email</label>
                         <div class="input-wrapper">
-                            <input type="email" class="input input-blue">
+                            <input type="email" class="input input-blue" id="user-enter-email" name="user-enter-email"
+                                   placeholder="example@mail.com">
                         </div>
                     </div>
                     <div class="input__field">
-                        <label for="#" class="label">Пароль</label>
+                        <label for="user-enter-password" class="label">Пароль</label>
                         <div class="input-wrapper -password">
-                            <input type="password" class="input input-blue input-password">
-                            <i class="icon icon-eye"></i>
-                            <i class="icon icon-no-eye"></i>
+                            <input type="password" class="input input-blue input-password" id="user-enter-password">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="form__item item-button">
-                <div class="form__button">
-                    <button class="link link-primary" type="submit">
-                        Вход
-                    </button>
-                </div>
+            <div class="form__button">
+                <button class="link link-primary" type="submit">
+                    Вход
+                </button>
             </div>
             <div class="form__item item-media">
                 <div class="media-block">

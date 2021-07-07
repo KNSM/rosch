@@ -269,4 +269,112 @@
       }
     }
   }
+
+  &-score-block {
+    .table-info {
+      margin-bottom: 22px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &__wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 -12px -10px;
+      }
+
+      &__item {
+        margin: 0 12px 10px;
+        display: flex;
+        align-items: center;
+
+        &:before {
+          content: '';
+          position: relative;
+          width: 19px;
+          height: 19px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+
+        .text {
+          font-size: 12px;
+          color: $grayColor;
+          line-height: 1.2;
+        }
+
+        &.item-certificate {
+          &:before {
+            background: #FBDBE0;
+          }
+        }
+
+        &.item-university {
+          &:before {
+            background: #FEF3F4;
+          }
+        }
+      }
+    }
+
+    .table-scores {
+      width: 100%;
+      margin-bottom: 10px;
+      background: #fff;
+      box-shadow: 0 15px 20px rgba(218, 218, 241, 0.15);
+      border-radius: 8px;
+      padding: 7px 30px 7px 10px;
+      display: block;
+      overflow-x: auto;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      tbody {
+        display: block;
+        width: 100%;
+      }
+
+      tr {
+        display: flex;
+      }
+
+      td {
+        padding: 10px;
+        line-height: 1;
+        flex: 1 1 auto;
+        text-align: center;
+
+        &:first-child {
+          text-align: left;
+        }
+
+        .title {
+          font-size: 12px;
+          color: $grayColor;
+          line-height: 1;
+        }
+
+        &.certificate-ne {
+          background: #FBDBE0;
+
+          &:last-child {
+            margin-right: 3px;
+          }
+        }
+
+        &.university-ne {
+          background: #FEF3F4;
+        }
+
+        &:first-child {
+          width: 150px;
+          flex: 0 0 auto;
+        }
+      }
+    }
+  }
 }

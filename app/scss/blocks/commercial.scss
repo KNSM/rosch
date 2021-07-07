@@ -1,6 +1,5 @@
 .commercial-block {
 
-
   .commercial {
     &__wrapper {
       margin: 0 -25px -35px;
@@ -18,7 +17,7 @@
 
     &__item {
       margin: 0 25px 35px;
-      width: calc(50% - 50px);
+      width: calc(100% - 50px);
 
       .item {
 
@@ -138,6 +137,20 @@
             }
           }
         }
+
+        &-max-line {
+          margin-left: 90px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 20px;
+          border-top: 1px #C0C9D0 solid;
+          padding-top: 12px;
+
+          .count {
+            color: #7E8493;
+          }
+        }
       }
 
       @media (max-width: $bpTablet) {
@@ -156,6 +169,16 @@
 
       @media (max-width: $bpPhone) {
         margin-bottom: 15px;
+      }
+    }
+  }
+
+  .page-advertising & {
+    .commercial__item {
+      width: calc(50% - 50px);
+
+      @media (max-width: $bpMobile) {
+        width: 100%
       }
     }
   }

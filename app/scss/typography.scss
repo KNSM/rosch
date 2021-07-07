@@ -135,3 +135,7 @@ ins::selection,
 strong::selection{
   background: rgba($primaryColor, .2);
 }
+
+.nicescroll-rails div {
+  background-color: $primaryColor !important;
+}

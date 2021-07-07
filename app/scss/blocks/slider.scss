@@ -63,6 +63,35 @@
     }
   }
 
+  &.slider-images-small {
+    .slider__wrapper {
+      margin: 0 -7px;
+    }
+
+    .slider__item {
+      margin: 0 7px;
+      width: 177px;
+
+      .image-wrapper {
+        padding-top: 82%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+
+        .image {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          min-width: 100%;
+          max-width: 100000%;
+          min-height: 100%;
+          max-height: 120%;
+        }
+      }
+    }
+  }
+
   &.slider-teachers {
 
     .slider {
@@ -439,62 +468,6 @@
       .slick-active {
         button {
           background: $primaryColor;
-        }
-      }
-    }
-  }
-
-  &.slider-nav {
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-
-    .slider-menu {
-      margin-right: 15px;
-      cursor: pointer;
-
-      &:before {
-        content: '\e91f';
-        font-family: 'icomoon';
-        font-size: 24px;
-        color: $primaryColor;
-        font-weight: 500;
-      }
-    }
-
-    .slider__wrapper {
-      overflow: hidden;
-      display: flex;
-    }
-
-    .slider__item {
-      margin: 0 5px;
-      flex: 0 0 auto;
-
-      .link {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 42px;
-        background: #FFFFFF;
-        box-shadow: 0 15px 20px rgba(218, 218, 241, 0.15);
-        border-radius: 8px;
-        padding: 5px 20px;
-
-        &:hover {
-          background: #EBF4FE;
-          box-shadow: 0 15px 20px rgba(218, 218, 241, 0.15);
-          border-radius: 8px;
-          color: $primaryColor;
-        }
-      }
-
-      &.-active {
-        .link {
-          background: #EBF4FE;
-          box-shadow: 0 15px 20px rgba(218, 218, 241, 0.15);
-          border-radius: 8px;
-          color: $primaryColor;
         }
       }
     }

@@ -141,4 +141,40 @@
   &.icon-no-eye:before {
     content: "\e925";
   }
+  &.icon-bell:before {
+    content: "\e926";
+  }
+  &.icon-shield:before {
+    content: "\e927";
+  }
+  &.icon-lesson-biology:before {
+    content: "\e928";
+    color: #2ABFFF;
+  }
+  &.icon-lesson-chemistry:before {
+    content: "\e929";
+    color: #44CB5A;
+  }
+  &.icon-lesson-geography:before {
+    content: "\e92a";
+    color: #44CBBB;
+  }
+  &.icon-lesson-it:before {
+    content: "\e92b";
+    color: #FFD10F;
+  }
+  &.icon-lesson-literary:before {
+    content: "\e92c";
+    color: #9044CB;
+  }
+  &.icon-lesson-math:before {
+    content: "\e92d";
+    color: #FF2A3E;
+  }
+  &.icon-arrow-to-right:before {
+    content: "\e92e";
+  }
+  &.icon-volume:before {
+    content: "\e92f";
+  }
 }
