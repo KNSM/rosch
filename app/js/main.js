@@ -2,11 +2,7 @@ $(document).ready(function () {
     var ov = $('.ov');
 
     //fancybox
-    $(".fancybox").fancybox({
-        helpers: {
-            media: {}
-        }
-    });
+    $(".fancybox").fancybox({});
 
     //custom scrollbar
     function customScroll() {

@@ -135,16 +135,23 @@
   }
 
   &__box {
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -5px -10px;
+
+      .input__box {
+        margin: 0 5px 10px;
+        padding: 0;
+      }
+    }
+
     &.box-checkbox-count-white {
       flex: 1 1 auto;
-      padding-right: 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-
-      &:last-child {
-        padding-right: 0;
-      }
 
       .input-checkbox {
         opacity: 0;
@@ -216,13 +223,8 @@
     }
 
     &.box-checkbox-white {
-      padding-right: 10px;
       display: flex;
       align-items: center;
-
-      &:last-child {
-        padding-right: 0;
-      }
 
       .input-checkbox {
         opacity: 0;
@@ -273,13 +275,8 @@
 
     &.box-checkbox-blue {
       flex: 1 1 auto;
-      padding-right: 10px;
       display: flex;
       align-items: center;
-
-      &:last-child {
-        padding-right: 0;
-      }
 
       .input-checkbox {
         opacity: 0;
