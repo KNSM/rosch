@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?2mapv3');
+  src:  url('fonts/icomoon.eot?2mapv3#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?2mapv3') format('truetype'),
+    url('fonts/icomoon.woff?2mapv3') format('woff'),
+    url('fonts/icomoon.svg?2mapv3#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon-arrow-down:before {
+  content: "\e900";
+}
+.icon-icon-arrow-top:before {
+  content: "\e901";
+}
+.icon-icon-bonnet:before {
+  content: "\e902";
+}
+.icon-icon-certificate:before {
+  content: "\e903";
+}
+.icon-icon-check:before {
+  content: "\e904";
+}
+.icon-icon-close:before {
+  content: "\e905";
+}
+.icon-icon-facebook:before {
+  content: "\e906";
+}
+.icon-icon-global:before {
+  content: "\e907";
+}
+.icon-icon-heart:before {
+  content: "\e908";
+}
+.icon-icon-magnifier:before {
+  content: "\e909";
+}
+.icon-icon-medal:before {
+  content: "\e90a";
+}
+.icon-icon-note-pencil:before {
+  content: "\e90b";
+}
+.icon-icon-prepare:before {
+  content: "\e90c";
+}
+.icon-icon-question-circle:before {
+  content: "\e90d";
+}
+.icon-icon-reg-lock:before {
+  content: "\e90e";
+}
+.icon-icon-star-filled:before {
+  content: "\e90f";
+}
+.icon-icon-twitter:before {
+  content: "\e910";
+}
+.icon-icon-user-circle:before {
+  content: "\e911";
+}
+.icon-icon-vk:before {
+  content: "\e912";
+}
+.icon-icon-heart-filled:before {
+  content: "\e913";
+}
+.icon-icon-arrow-right1:before {
+  content: "\e914";
+}
+.icon-icon-instagram-border:before {
+  content: "\e915";
+}
+.icon-icon-vk-border:before {
+  content: "\e916";
+}
+.icon-icon-arrow-down-bold:before {
+  content: "\e917";
+}
+.icon-icon-arrow-left:before {
+  content: "\e918";
+}
+.icon-icon-arrow-right:before {
+  content: "\e919";
+}
+.icon-icon-dislike:before {
+  content: "\e91a";
+}
+.icon-icon-like:before {
+  content: "\e91b";
+}
+.icon-icon-reverse:before {
+  content: "\e91c";
+}
+.icon-icon-play:before {
+  content: "\e91d";
+}
+.icon-icon-copy:before {
+  content: "\e91e";
+}
+.icon-icon-menu:before {
+  content: "\e91f";
+}
+.icon-icon-filter:before {
+  content: "\e920";
+}
+.icon-icon-eye1:before {
+  content: "\e921";
+}
+.icon-icon-medal-single:before {
+  content: "\e922";
+}
+.icon-icon-eye:before {
+  content: "\e923";
+}
+.icon-icon-mark:before {
+  content: "\e924";
+}
+.icon-icon-no-eye:before {
+  content: "\e925";
+}
+.icon-icon-bell:before {
+  content: "\e926";
+}
+.icon-icon-shield:before {
+  content: "\e927";
+}
+.icon-icon-lesson-biology:before {
+  content: "\e928";
+}
+.icon-icon-lesson-chemistry:before {
+  content: "\e929";
+}
+.icon-icon-lesson-geography:before {
+  content: "\e92a";
+}
+.icon-icon-lesson-it:before {
+  content: "\e92b";
+}
+.icon-icon-lesson-litrary:before {
+  content: "\e92c";
+}
+.icon-icon-lesson-math:before {
+  content: "\e92d";
+}
+.icon-icon-arrow-to-right:before {
+  content: "\e92e";
+}
+.icon-icon-volume:before {
+  content: "\e92f";
+}
